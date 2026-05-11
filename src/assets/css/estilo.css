@@ -43,7 +43,8 @@ a {
 
 p {
     color: var(--muted);
-    max-width: 66ch;
+    line-height: 1.68;
+    max-width: 68ch;
 }
 
 .container {
@@ -53,7 +54,7 @@ p {
 }
 
 .narrow {
-    max-width: 900px;
+    max-width: 860px;
 }
 
 .navbar {
@@ -141,16 +142,18 @@ h3 {
     color: var(--ink);
     font-weight: 850;
     letter-spacing: 0;
-    line-height: 1.04;
+    line-height: 1.1;
 }
 
 h1 {
-    font-size: clamp(3rem, 8vw, 6.8rem);
-    max-width: 980px;
+    font-size: clamp(2.65rem, 5.8vw, 5.15rem);
+    line-height: 1.08;
+    max-width: 880px;
 }
 
 h2 {
-    font-size: clamp(2rem, 4vw, 4.25rem);
+    font-size: clamp(1.8rem, 3.4vw, 3.35rem);
+    line-height: 1.14;
 }
 
 h3 {
@@ -312,6 +315,7 @@ h3 {
 .featured-section,
 .work-list-section,
 .contact-section,
+.personal-section,
 .project-media-section,
 .project-body-section {
     padding: 72px 0;
@@ -326,7 +330,8 @@ h3 {
 }
 
 .intro-copy p + p,
-.detail-content p + h2 {
+.detail-content p + h2,
+.detail-content .case-image + h2 {
     margin-top: 28px;
 }
 
@@ -394,6 +399,7 @@ h3 {
 .project-cover::before,
 .project-cover::after {
     content: "";
+    display: none;
     position: absolute;
 }
 
@@ -429,19 +435,53 @@ h3 {
     background: linear-gradient(135deg, #ffffff 0%, #ece5d7 52%, #b9d2c2 100%);
 }
 
-.project-cover-wide {
-    aspect-ratio: 16 / 8;
+.project-cover img,
+.case-image img,
+.profile-photo img,
+.personal-gallery img {
+    background: var(--soft);
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.case-image {
+    background: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    min-height: 360px;
+    overflow: hidden;
+}
+
+.case-image-hero {
+    aspect-ratio: 16 / 9;
+    box-shadow: var(--shadow);
+}
+
+.case-image-inline {
+    aspect-ratio: 16 / 10;
+    margin: 36px 0;
+}
+
+.case-image figcaption,
+.personal-gallery figcaption {
+    color: var(--muted);
+    font-size: 0.86rem;
+    line-height: 1.5;
+    padding: 12px 14px 14px;
+}
+
+.project-media-section {
+    padding-bottom: 44px;
+    padding-top: 12px;
 }
 
 .detail-grid,
 .contact-grid {
     align-items: start;
     display: grid;
-    gap: 48px;
-    grid-template-columns: minmax(0, 1.4fr) minmax(280px, 0.6fr);
+    gap: 56px;
+    grid-template-columns: minmax(0, 1.25fr) minmax(280px, 0.55fr);
 }
 
 .detail-content,
@@ -451,7 +491,7 @@ h3 {
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius);
-    padding: 30px;
+    padding: 34px;
 }
 
 .detail-content h2,
@@ -460,6 +500,15 @@ h3 {
 .project-facts h2 {
     font-size: 1.55rem;
     margin-bottom: 16px;
+}
+
+.detail-content p + p,
+.about-panel p + p {
+    margin-top: 18px;
+}
+
+.detail-content h2:not(:first-child) {
+    margin-top: 42px;
 }
 
 .project-facts dl {
@@ -495,6 +544,304 @@ h3 {
     background: var(--soft);
     border-color: rgba(17, 17, 17, 0.28);
     transform: translateY(-2px);
+}
+
+.personal-section {
+    padding-top: 24px;
+}
+
+.personal-feature {
+    align-items: center;
+    border-top: 1px solid var(--line);
+    display: grid;
+    gap: 42px;
+    grid-template-columns: minmax(240px, 0.62fr) minmax(0, 1fr);
+    padding-top: 58px;
+}
+
+.profile-photo {
+    aspect-ratio: 4 / 5;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.personal-copy h2 {
+    max-width: 620px;
+}
+
+.personal-copy p:not(.eyebrow) {
+    margin-top: 18px;
+}
+
+.personal-gallery {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    margin-top: 34px;
+}
+
+.personal-gallery figure {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+    transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.personal-gallery figure:hover {
+    box-shadow: 0 16px 40px rgba(17, 17, 17, 0.07);
+    transform: translateY(-3px);
+}
+
+.personal-gallery img {
+    aspect-ratio: 1 / 1;
+}
+
+.project-case-study {
+    --case-section-space: 76px;
+    --case-copy-width: 680px;
+    --case-measure: 62ch;
+}
+
+.case-cover {
+    padding: 24px 24px 0;
+}
+
+.case-study-image {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    overflow: hidden;
+}
+
+.case-study-image img {
+    background: linear-gradient(135deg, #f7efe3 0%, #ffffff 52%, #dfecef 100%);
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.case-study-image figcaption {
+    color: var(--muted);
+    font-size: 0.8rem;
+    line-height: 1.5;
+    padding: 12px 14px 14px;
+}
+
+.case-study-image-cover {
+    aspect-ratio: 16 / 9;
+    box-shadow: var(--shadow);
+    margin: 0 auto;
+    max-width: 1180px;
+}
+
+.case-study-image-cover figcaption {
+    display: none;
+}
+
+.case-intro {
+    padding: 58px 0 30px;
+}
+
+.case-intro-grid {
+    align-items: start;
+    display: grid;
+    gap: 52px;
+    grid-template-columns: minmax(0, 1.45fr) minmax(260px, 0.55fr);
+}
+
+.case-text-grid {
+    align-items: start;
+    display: grid;
+    gap: 48px;
+    grid-template-columns: minmax(150px, 220px) minmax(0, var(--case-copy-width));
+    justify-content: start;
+}
+
+.case-title-block h1 {
+    font-size: clamp(2.05rem, 4vw, 3.55rem);
+    line-height: 1.12;
+    margin-top: 18px;
+    max-width: 760px;
+}
+
+.case-title-block .lead {
+    font-size: clamp(1rem, 1.45vw, 1.12rem);
+    line-height: 1.62;
+    max-width: 58ch;
+}
+
+.case-info-panel {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    padding: 22px;
+    position: sticky;
+    top: 102px;
+}
+
+.case-info-panel dl {
+    display: grid;
+    gap: 14px;
+}
+
+.case-info-panel div {
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 14px;
+}
+
+.case-info-panel div:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.case-info-panel dt,
+.case-section-label .eyebrow {
+    color: var(--accent);
+    font-size: 0.72rem;
+    font-weight: 900;
+    text-transform: uppercase;
+}
+
+.case-info-panel dd {
+    color: var(--ink);
+    font-size: 0.94rem;
+    font-weight: 720;
+    line-height: 1.48;
+    margin-top: 4px;
+}
+
+.case-section {
+    padding: var(--case-section-space) 0;
+}
+
+.case-section + .case-section {
+    border-top: 1px solid var(--line);
+}
+
+.case-resume {
+    padding-top: 56px;
+}
+
+.case-section-label {
+    position: sticky;
+    top: 112px;
+}
+
+.case-copy {
+    max-width: var(--case-copy-width);
+}
+
+.case-copy h2 {
+    font-size: clamp(1.35rem, 2.2vw, 2.15rem);
+    line-height: 1.22;
+    max-width: 680px;
+}
+
+.case-copy h3 {
+    font-size: clamp(1.08rem, 1.55vw, 1.35rem);
+    line-height: 1.28;
+    margin-top: 28px;
+    max-width: 620px;
+}
+
+.case-copy p {
+    font-size: 1rem;
+    line-height: 1.66;
+    max-width: var(--case-measure);
+}
+
+.case-copy h2 + p,
+.case-copy p + p {
+    margin-top: 16px;
+}
+
+.case-image-grid {
+    display: grid;
+    gap: 16px;
+    margin-top: 32px;
+}
+
+.case-image-grid-two {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.case-image-grid .case-study-image,
+.case-study-image-wide {
+    aspect-ratio: 3 / 2;
+}
+
+.case-study-image-wide {
+    margin-top: 32px;
+}
+
+.case-problem {
+    border-top: 0;
+    padding: 68px 0;
+}
+
+.problem-card {
+    background: var(--ink);
+    border-radius: var(--radius);
+    color: var(--surface);
+    padding: clamp(28px, 5vw, 58px);
+}
+
+.problem-card .eyebrow,
+.problem-card p {
+    color: rgba(255, 255, 255, 0.72);
+}
+
+.problem-card h2 {
+    color: var(--surface);
+    font-size: clamp(1.55rem, 3vw, 2.65rem);
+    line-height: 1.18;
+    max-width: 760px;
+}
+
+.problem-card p {
+    font-size: 1rem;
+    line-height: 1.66;
+    margin-top: 18px;
+    max-width: 62ch;
+}
+
+.problem-card blockquote {
+    border-left: 3px solid var(--warm);
+    color: var(--surface);
+    font-size: clamp(1.12rem, 1.8vw, 1.55rem);
+    font-weight: 800;
+    line-height: 1.36;
+    margin-top: 32px;
+    max-width: 760px;
+    padding-left: 22px;
+}
+
+.case-role {
+    padding-bottom: 24px;
+}
+
+.case-role-card {
+    background: var(--surface);
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    display: grid;
+    gap: 42px;
+    grid-template-columns: minmax(220px, 0.75fr) minmax(0, 1.25fr);
+    padding-bottom: clamp(30px, 5vw, 56px);
+    padding-top: clamp(30px, 5vw, 56px);
+}
+
+.case-role-card h2 {
+    font-size: clamp(1.3rem, 2.2vw, 2rem);
+    line-height: 1.22;
+    max-width: 520px;
+}
+
+.role-list p + p {
+    margin-top: 18px;
 }
 
 .footer {
@@ -609,13 +956,63 @@ h3 {
     .featured-section,
     .work-list-section,
     .contact-section,
+    .personal-section,
     .project-media-section,
     .project-body-section {
         padding: 46px 0;
     }
 
-    .project-cover-wide {
-        min-height: 260px;
+    .personal-feature {
+        grid-template-columns: 1fr;
+    }
+
+    .personal-gallery {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .personal-feature {
+        align-items: start;
+        padding-top: 42px;
+    }
+
+    .personal-gallery {
+        gap: 14px;
+    }
+
+    .case-cover {
+        padding: 18px 18px 0;
+    }
+
+    .case-intro {
+        padding: 52px 0 28px;
+    }
+
+    .case-intro-grid,
+    .case-text-grid,
+    .case-role-card {
+        gap: 28px;
+        grid-template-columns: 1fr;
+    }
+
+    .case-info-panel,
+    .case-section-label {
+        position: static;
+    }
+
+    .case-section {
+        padding: 58px 0;
+    }
+
+    .case-image-grid-two {
+        grid-template-columns: 1fr;
+    }
+
+    .case-study-image-cover {
+        aspect-ratio: 16 / 10;
+    }
+
+    .problem-card blockquote {
+        padding-left: 18px;
     }
 }
 
@@ -625,10 +1022,15 @@ h3 {
     }
 
     h1 {
-        font-size: 2.55rem;
+        font-size: 2.35rem;
+        line-height: 1.12;
     }
 
     .navbar-menu ul {
+        grid-template-columns: 1fr;
+    }
+
+    .personal-gallery {
         grid-template-columns: 1fr;
     }
 
@@ -652,5 +1054,14 @@ h3 {
     .social-panel,
     .project-facts {
         padding: 22px;
+    }
+
+    .case-image-inline {
+        margin: 28px 0;
+    }
+
+    .case-image figcaption,
+    .personal-gallery figcaption {
+        font-size: 0.8rem;
     }
 }
