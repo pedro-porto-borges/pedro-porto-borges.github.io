@@ -1,85 +1,369 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--@import "_head.kit"-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Wise Quests case study by Pedro Porto Borges.">
+    <title>Wise Quests - Pedro Porto Borges</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/estilo.min.css">
+</head>
 
 <body>
-    <!--@import "_header.kit"-->
+    <header class="navbar">
+        <div class="container">
+            <div class="navbar-brand">
+                <a href="/index.html"><span class="logo">Pedro Porto</span></a>
+            </div>
+            <nav class="navbar-menu">
+                <ul>
+                    <li><a href="/index.html">Home</a></li>
+                    <li><a href="/portfolio.html">Portfolio</a></li>
+                    <li><a href="/contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
 
-    <main>
-        <article class="project-detail">
-            <header class="project-detail-hero section-fade">
-                <div class="container narrow">
-                    <a href="/portfolio.html" class="back-link">Back to portfolio</a>
-                    <p class="eyebrow">Project Three</p>
-                    <h1>Wise Quests: Turning Financial Freedom into a Guided Learning Journey</h1>
-                    <p class="lead">A product concept for Wise Young Explorer that helps parents give teenagers more
-                        financial autonomy through visibility, challenges and goal-based saving — balancing parental
-                        reassurance with teen motivation.</p>
+    <main class="young-case">
+        <div class="young-shell" id="youngShell">
+
+            <button class="sidebar-toggle" id="sidebarToggle" type="button" aria-label="Toggle sidebar"
+                aria-controls="youngSidebar" aria-expanded="true" title="Close sidebar">
+                <span class="sidebar-toggle-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22">
+                        <rect x="3" y="4" width="18" height="16" rx="3"></rect>
+                        <path d="M9 4v16"></path>
+                    </svg>
+                </span>
+            </button>
+
+            <aside class="young-sidebar" id="youngSidebar" aria-label="Project navigation">
+                <div class="young-brand">
+                    <p class="young-eyebrow">Portfolio</p>
+                    <a class="young-brand-name" href="#top">Pedro Porto Borges</a>
+                    <p class="young-location">Lisbon, PT</p>
                 </div>
-            </header>
 
-            <section class="project-media-section">
-                <div class="container">
-                    <figure class="case-image case-image-hero">
-                        <img src="/assets/images/projects/wise-quests-hero@1x.jpg" srcset="/assets/images/projects/wise-quests-hero@1x.jpg 1x, /assets/images/projects/wise-quests-hero@2x.jpg 2x" width="1600" height="900" alt="Placeholder hero image for the Wise Quests case study" loading="eager" decoding="async">
-                        <figcaption>Hero image slot: replace with the strongest product concept, campaign, or experience overview image.</figcaption>
+                <nav class="young-nav" aria-label="Case study sections">
+                    <a href="#overview">Overview</a>
+                    <a href="#challenge">Challenge</a>
+                    <a href="#solution">Solution</a>
+                    <a href="#gallery">Gallery</a>
+                    <a href="#role">My role</a>
+                </nav>
+
+                <nav class="young-social" aria-label="External links">
+                    <a href="/portfolio.html">Portfolio</a>
+                    <a href="https://www.linkedin.com/in/pedro-porto-borges-789371208/" target="_blank"
+                        rel="noopener">LinkedIn</a>
+                    <a href="https://github.com/pedro-porto-borges/" target="_blank" rel="noopener">GitHub</a>
+                </nav>
+            </aside>
+
+            <section id="top" class="young-main">
+                <article class="young-article">
+                    <a class="young-back-link" href="/portfolio.html">Back to portfolio</a>
+
+                    <header id="overview" class="young-post-header">
+                        <p class="young-section-label">Wise / New Blood Awards 2026</p>
+                        <h1>Wise Quests</h1>
+                        <p class="young-subtitle">Turning financial freedom into a guided learning journey.</p>
+
+                        <p class="young-intro">
+                            A product concept for Wise Young Explorer that helps parents give teenagers more financial
+                            autonomy through visibility, challenges and goal-based saving, balancing parental
+                            reassurance with teen motivation.
+                        </p>
+
+                        <ul class="young-tag-list" aria-label="Project tags">
+                            <li>Product Strategy</li>
+                            <li>UX Research</li>
+                            <li>Fintech</li>
+                            <li>Service Design</li>
+                            <li>Wireframing</li>
+                        </ul>
+
+                        <a class="young-button" href="#gallery">View the visual story</a>
+                    </header>
+
+                    <figure class="young-hero">
+                        <!-- IMAGEM 01: Hero cover - Adicione o caminho relativo da imagem aqui -->
+                        <img src="assets/images/projects/1.jpg"
+                            srcset="assets/images/projects/1.jpg 1x, assets/images/projects/1.jpg 2x" width="1600"
+                            alt="Wise Quests hero cover slide" loading="eager" decoding="async">
+                        <figcaption>Replace this slot with the strongest cover or overview slide from the presentation.
+                        </figcaption>
                     </figure>
-                </div>
-            </section>
 
-            <section class="project-body-section">
-                <div class="container detail-grid">
-                    <div class="detail-content">
-                        <h2>Overview</h2>
-                        <p>Wise Young Explorer helps teenagers save, spend and receive money across currencies while
-                            parents retain oversight and control. The challenge was to design an experience that feels
-                            reassuring for parents but still simple, useful and motivating for teens.</p>
+                    <section class="young-meta-grid" aria-label="Project information">
+                        <div class="young-meta-card">
+                            <span>Date</span>
+                            <strong>March 2026</strong>
+                        </div>
+                        <div class="young-meta-card">
+                            <span>Context</span>
+                            <strong>Academic / New Blood Awards 2026</strong>
+                        </div>
+                        <div class="young-meta-card">
+                            <span>Role</span>
+                            <strong>Research, insight synthesis, ideation and wireframes</strong>
+                        </div>
+                        <div class="young-meta-card">
+                            <span>Output</span>
+                            <strong>Product concept and product narrative</strong>
+                        </div>
+                    </section>
 
-                        <p> The key tension was clear: parents want safety and responsibility, while teenagers want
-                            freedom and independence. The solution needed to work for both audiences without directly
-                            marketing to minors or creating a separate brand.</p>
-                        <figure class="case-image case-image-inline">
-                            <img src="/assets/images/projects/wise-quests-process-01@1x.jpg" srcset="/assets/images/projects/wise-quests-process-01@1x.jpg 1x, /assets/images/projects/wise-quests-process-01@2x.jpg 2x" width="1200" height="750" alt="Placeholder for Wise Quests process image, such as research synthesis or solution pillars" loading="lazy" decoding="async">
-                            <figcaption>Process image slot: research synthesis, opportunity framing, or solution pillars.</figcaption>
+                    <section id="challenge" class="young-story young-two-column">
+                        <div class="young-story-copy">
+                            <p class="young-section-label">01 / Challenge</p>
+                            <h2>Parents want to give freedom. But first, it has to feel safe.</h2>
+                            <p>
+                                Wise Young Explorer helps teenagers save, spend and receive money across currencies
+                                while parents retain oversight and control. The challenge was to design an experience
+                                that feels reassuring for parents but still simple, useful and motivating for teens.
+                            </p>
+                        </div>
+
+                        <figure class="young-image-card">
+                            <!-- IMAGEM 02: Challenge - Adicione o caminho relativo da imagem aqui -->
+                            <img src="assets/images/projects/2.jpg"
+                                srcset="assets/images/projects/2.jpg 1x, assets/images/projects/2.jpg 2x" width="1200"
+                                alt="Wise Quests challenge slide" loading="lazy" decoding="async">
+                            <figcaption>Use this slot for the slide that explains the parent and teen tension.
+                            </figcaption>
                         </figure>
-                        <h2>Process</h2>
-                        <p>My contribution focused on research, interviews, insight synthesis, ideation, wireframes and
-                            case narrative. Together with the team, we structured the solution around three pillars:
-                            Visibility, Challenges and Goals.</p>
+                    </section>
 
-                        <p>Visibility gives teens access to basic money awareness through balance, notifications and
-                            spending tracking. Challenges turn everyday responsibilities into rewarded actions. Goals
-                            help teens connect short-term financial behavior with future aspirations.</p>
-                        <figure class="case-image case-image-inline">
-                            <img src="/assets/images/projects/wise-quests-wireframe-01@1x.jpg" srcset="/assets/images/projects/wise-quests-wireframe-01@1x.jpg 1x, /assets/images/projects/wise-quests-wireframe-01@2x.jpg 2x" width="1200" height="750" alt="Placeholder for Wise Quests wireframe or teen finance interface image" loading="lazy" decoding="async">
-                            <figcaption>Interface image slot: wireframes, challenge flow, goals screen, or prototype frame.</figcaption>
+                    <section class="young-story">
+                        <div class="young-section-heading">
+                            <p class="young-section-label">02 / Core insight</p>
+                            <h2>Autonomy needs visibility before it can become trust.</h2>
+                        </div>
+
+                        <figure class="young-wide-image">
+                            <!-- IMAGEM 03: Core insight - Adicione o caminho relativo da imagem aqui -->
+                            <img src="assets/images/projects/3.jpg"
+                                srcset="assets/images/projects/3.jpg 1x, assets/images/projects/3.jpg 2x" width="1600"
+                                alt="Wise Quests core insight slide" loading="lazy" decoding="async">
+                            <figcaption>Use this slot for research synthesis, insight framing, or audience tension.
+                            </figcaption>
                         </figure>
-                    </div>
-                    <aside class="project-facts">
-                        <h2>Details</h2>
-                         <dl>
-                            <dt>Date</dt>
-                            <dd>March 2026</dd>
-                            <dt>Team</dt>
-                            <dd>3 members</dd>
-                            <dt>Context</dt>
-                            <dd>Academic / New Blood Awards 2026</dd>
-                            <dt>Role</dt>
-                            <dd>Research / Insight Synthesis / Ideation / Wireframes / Storytelling</dd>
-                            <dt>Methods:</dt>
-                            <dd>Benchmarking, Interviews, Problem Framing, Low-Fidelity Wireframes, Product Narrative</dd>
-                            <dt>Core pillars:</dt>
-                            <dd>Visibility, Challenges, Goals</dd>
-                        </dl>
-                    </aside>
-                </div>
+
+                        <p class="young-lead-copy">
+                            Parents want safety and responsibility, while teenagers want freedom and independence. The
+                            solution needed to work for both audiences without directly marketing to minors or creating
+                            a separate brand.
+                        </p>
+                    </section>
+
+                    <section class="young-story young-two-column young-reverse">
+                        <div class="young-story-copy">
+                            <p class="young-section-label">03 / Design decision</p>
+                            <h2>The first step is visibility.</h2>
+                            <p>
+                                Visibility gives teens access to basic money awareness through balance, notifications
+                                and spending tracking. These foundations help teens understand money in context while
+                                giving parents confidence to grant more independence.
+                            </p>
+                        </div>
+
+                        <figure class="young-image-card">
+                            <!-- IMAGEM 04: Visibility - Adicione o caminho relativo da imagem aqui -->
+                            <img src="assets/images/projects/4.jpg"
+                                srcset="assets/images/projects/4.jpg 1x, assets/images/projects/4.jpg 2x" width="1200"
+                                alt="Wise Quests visibility slide" loading="lazy" decoding="async">
+                            <figcaption>Use this slot for the visibility, balance, notification or spending tracking
+                                slide.</figcaption>
+                        </figure>
+                    </section>
+
+                    <section id="solution" class="young-story">
+                        <div class="young-section-heading">
+                            <p class="young-section-label">04 / Solution</p>
+                            <h2>Quests turn everyday responsibility into guided progress.</h2>
+                        </div>
+
+                        <figure class="young-wide-image">
+                            <!-- IMAGEM 05: Solution intro - Adicione o caminho relativo da imagem aqui -->
+                            <img src="assets/images/projects/5.jpg"
+                                srcset="assets/images/projects/5.jpg 1x, assets/images/projects/5.jpg 2x" width="1600"
+                                alt="Wise Quests solution intro slide" loading="lazy" decoding="async">
+                            <figcaption>Use this slot for the slide that introduces Quests as the product idea.
+                            </figcaption>
+                        </figure>
+
+                        <p class="young-lead-copy">
+                            Together with the team, we structured the concept around three pillars: Visibility,
+                            Challenges and Goals. Each pillar connects short-term actions with long-term financial
+                            confidence.
+                        </p>
+                    </section>
+
+                    <section class="young-story">
+                        <div class="young-section-heading young-compact">
+                            <p class="young-section-label">05 / Product pillars</p>
+                            <h2>Earn, learn and grow.</h2>
+                        </div>
+
+                        <div class="young-pillar-grid">
+                            <article class="young-pillar-card">
+                                <span class="young-pillar-number">01</span>
+                                <h3>Challenges</h3>
+                                <p>Parents create paid tasks and teens complete them, turning everyday responsibilities
+                                    into moments of progress.</p>
+                            </article>
+
+                            <article class="young-pillar-card">
+                                <span class="young-pillar-number">02</span>
+                                <h3>Learn and Earn</h3>
+                                <p>Short financial lessons reward learning, making financial education actionable
+                                    instead of abstract.</p>
+                            </article>
+
+                            <article class="young-pillar-card">
+                                <span class="young-pillar-number">03</span>
+                                <h3>Goals</h3>
+                                <p>Teens set goals, track progress and connect daily spending with longer-term
+                                    aspirations.</p>
+                            </article>
+                        </div>
+                    </section>
+
+                    <section id="gallery" class="young-gallery" aria-labelledby="young-gallery-title">
+                        <div class="young-section-heading">
+                            <p class="young-section-label">06 / Visual story</p>
+                            <h2 id="young-gallery-title">Eight presentation image slots</h2>
+                        </div>
+
+                        <div class="young-gallery-grid">
+                            <figure class="young-gallery-item young-gallery-large">
+                                <!-- IMAGEM 06: Challenges & Learn - Adicione o caminho relativo da imagem aqui -->
+                                <img src="assets/images/projects/6.jpg"
+                                    srcset="assets/images/projects/6.jpg 1x, assets/images/projects/6.jpg 2x"
+                                    width="1600" alt="Wise Quests challenges and learn slide" loading="lazy"
+                                    decoding="async">
+                                <figcaption>Use this slot for the slide showing Challenges, Learn and Earn, or the teen
+                                    reward loop.</figcaption>
+                            </figure>
+
+                            <figure class="young-gallery-item">
+                                <!-- IMAGEM 07: Goals - Adicione o caminho relativo da imagem aqui -->
+                                <img src="assets/images/projects/7.jpg"
+                                    srcset="assets/images/projects/7.jpg 1x, assets/images/projects/7.jpg 2x"
+                                    width="1200" alt="Wise Quests goals slide" loading="lazy" decoding="async">
+                                <figcaption>Use this slot for the Goal Buckets, savings progress, or aspiration slide.
+                                </figcaption>
+                            </figure>
+
+                            <figure class="young-gallery-item">
+                                <!-- IMAGEM 08: Final experience - Adicione o caminho relativo da imagem aqui -->
+                                <img src="assets/images/projects/8.jpg"
+                                    srcset="assets/images/projects/8.jpg 1x, assets/images/projects/8.jpg 2x"
+                                    width="1200" alt="Wise Quests final experience slide" loading="lazy"
+                                    decoding="async">
+                                <figcaption>Use this slot for the final prototype, story summary, or product experience
+                                    slide.</figcaption>
+                            </figure>
+                        </div>
+                    </section>
+
+                    <section id="role" class="young-story young-closing">
+                        <div class="young-section-heading young-compact">
+                            <p class="young-section-label">07 / My role</p>
+                            <h2>Connecting research, product logic and storytelling.</h2>
+                        </div>
+
+                        <div class="young-role-grid">
+                            <div>
+                                <h3>What I contributed</h3>
+                                <p>
+                                    My contribution focused on research, interviews, insight synthesis, ideation,
+                                    wireframes and case narrative.
+                                </p>
+                            </div>
+
+                            <div>
+                                <h3>What the concept solves</h3>
+                                <p>
+                                    The solution reframes teen banking from a simple card experience into a guided
+                                    journey where teens earn through responsibilities, learn through rewards and save
+                                    towards goals.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                </article>
             </section>
-        </article>
+        </div>
     </main>
 
-    <!--@import "_footer.kit"-->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <p class="footer-kicker">Available for thoughtful digital work</p>
+                    <h2>Let's build something clear, useful, and well made.</h2>
+                </div>
+                <div class="footer-section">
+                    <h3>Pages</h3>
+                    <ul class="footer-links">
+                        <li><a href="/index.html">Home</a></li>
+                        <li><a href="/portfolio.html">Portfolio</a></li>
+                        <li><a href="/contact.html">Contact</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Social</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://github.com/pedro-porto-borges/" target="_blank" rel="noopener">GitHub</a>
+                        </li>
+                        <li><a href="https://www.linkedin.com/in/pedro-porto-borges-789371208/" target="_blank"
+                                rel="noopener">LinkedIn</a></li>
+                        <li><a href="https://instagram.com/analog.pp/" target="_blank" rel="noopener">Instagram</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Pedro Porto Borges.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const sidebarToggle = document.getElementById('sidebarToggle');
+            const youngShell = document.getElementById('youngShell');
+
+            if (!sidebarToggle || !youngShell) return;
+
+            const setSidebarState = (isHidden) => {
+                youngShell.classList.toggle('sidebar-hidden', isHidden);
+
+                sidebarToggle.setAttribute('aria-expanded', String(!isHidden));
+                sidebarToggle.setAttribute(
+                    'title',
+                    isHidden ? 'Open sidebar' : 'Close sidebar'
+                );
+
+                localStorage.setItem('sidebarHidden', String(isHidden));
+            };
+
+            const savedState = localStorage.getItem('sidebarHidden') === 'true';
+            setSidebarState(savedState);
+
+            sidebarToggle.addEventListener('click', () => {
+                const isHidden = youngShell.classList.contains('sidebar-hidden');
+                setSidebarState(!isHidden);
+            });
+        });
+    </script>
 </body>
 
 </html>
-
