@@ -1134,7 +1134,7 @@ button:focus-visible {
 }
 
 .case-image-grid-two {
-    -ms-grid-columns: (minmax(0, 1fr))[2];
+    -ms-grid-columns: 1fr 1fr;
     grid-template-columns: repeat(2, minmax(0, 1fr))
 }
 
@@ -1984,24 +1984,24 @@ button:focus-visible {
     .project-body-section,
     .project-media-section,
     .work-list-section {
-        padding: 46px 0
+        padding: 46px 0;
     }
 
     .personal-feature {
         -ms-grid-columns: 1fr;
-        grid-template-columns: 1fr
+        grid-template-columns: 1fr;
     }
 
     .personal-gallery {
-        -ms-grid-columns: (minmax(0, 1fr))[2];
-        grid-template-columns: repeat(2, minmax(0, 1fr))
+        -ms-grid-columns: minmax(0, 1fr) 14px minmax(0, 1fr);
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
 
     .personal-feature {
         -webkit-box-align: start;
         -ms-flex-align: start;
         align-items: start;
-        padding-top: 42px
+        padding-top: 42px;
     }
 
     .personal-gallery {
@@ -2336,6 +2336,7 @@ button:focus-visible {
 
 /* Reduced motion support */
 @media (prefers-reduced-motion: reduce) {
+
     .young-shell,
     .young-sidebar,
     .young-case .sidebar-toggle {
