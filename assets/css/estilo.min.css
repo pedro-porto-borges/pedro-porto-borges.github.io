@@ -2343,3 +2343,327 @@ button:focus-visible {
         transition: none;
     }
 }
+
+/* === EVENTBRITE CASE STUDY === */
+.eventbrite-case {
+  --eb-bg: #111111;
+  --eb-surface: #ffffff;
+  --eb-soft: #f6f6f6;
+  --eb-text: #171717;
+  --eb-muted: #737373;
+  --eb-border: #eeeeee;
+  --eb-accent: #f05537;
+  --eb-dark: #0a0a0a;
+  background: var(--eb-bg);
+  color: var(--eb-text);
+  padding: clamp(2rem, 5vw, 5rem) 1.5rem;
+}
+
+.eventbrite-case .eventbrite-case-study {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  display: grid;
+  gap: clamp(3rem, 7vw, 6rem);
+}
+
+.eventbrite-case .eventbrite-hero {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 3rem);
+}
+
+.eventbrite-case .eventbrite-hero-copy {
+  display: grid;
+  gap: 1rem;
+  max-width: 860px;
+}
+
+.eventbrite-case .back-link {
+  color: rgba(255, 255, 255, 0.72);
+  width: fit-content;
+}
+
+.eventbrite-case .back-link:hover {
+  color: var(--eb-accent);
+}
+
+.eventbrite-case .eventbrite-section-label,
+.eventbrite-case .eventbrite-meta-grid span {
+  color: var(--eb-accent);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  line-height: 1.4;
+  text-transform: uppercase;
+}
+
+.eventbrite-case h1,
+.eventbrite-case h2 {
+  color: #ffffff;
+  letter-spacing: -0.04em;
+}
+
+.eventbrite-case h1 {
+  font-size: clamp(3rem, 9vw, 7.5rem);
+  line-height: 0.95;
+  max-width: 980px;
+}
+
+.eventbrite-case h2 {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1;
+  max-width: 920px;
+}
+
+.eventbrite-case .eventbrite-hero-copy p:not(.eventbrite-section-label),
+.eventbrite-case .eventbrite-section-heading p:not(.eventbrite-section-label) {
+  color: rgba(255, 255, 255, 0.72);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  line-height: 1.62;
+  max-width: 72ch;
+}
+
+.eventbrite-case .eventbrite-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.eventbrite-case .eventbrite-meta-grid div {
+  min-height: 150px;
+  display: grid;
+  align-content: space-between;
+  gap: 1rem;
+  padding: 1.35rem;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.05);
+}
+
+.eventbrite-case .eventbrite-meta-grid strong {
+  color: #ffffff;
+  font-size: 1rem;
+  line-height: 1.3;
+}
+
+.eventbrite-case .eventbrite-story-section {
+  display: grid;
+  gap: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.eventbrite-case .eventbrite-section-heading {
+  display: grid;
+  gap: 1rem;
+}
+
+.eventbrite-case .eventbrite-slide-frame {
+  width: 100%;
+  margin: 0;
+  overflow: visible;
+  border-radius: 24px;
+  background: var(--eb-surface);
+  border: 1px solid var(--eb-border);
+}
+
+.eventbrite-case .eventbrite-slide-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  object-fit: contain;
+  border-radius: 24px 24px 0 0;
+}
+
+.eventbrite-case .eventbrite-slide-frame figcaption {
+  padding: 14px 18px 16px;
+  color: var(--eb-muted);
+  font-size: 0.92rem;
+  line-height: 1.45;
+  border-top: 1px solid var(--eb-border);
+}
+
+@media (max-width: 900px) {
+  .eventbrite-case .eventbrite-meta-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .eventbrite-case {
+    padding: 2rem 1rem;
+  }
+
+  .eventbrite-case .eventbrite-meta-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .eventbrite-case .eventbrite-slide-frame {
+    border-radius: 18px;
+  }
+  
+  .eventbrite-case .eventbrite-slide-image {
+    border-radius: 18px 18px 0 0;
+  }
+  
+  .eventbrite-case .eventbrite-slide-frame figcaption {
+    font-size: 0.84rem;
+    padding: 12px 14px;
+  }
+}
+
+/* === EVENTBRITE SIDEBAR TOGGLE === */
+.eventbrite-case .eventbrite-shell {
+  position: relative;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+}
+
+.eventbrite-case .eventbrite-case-study {
+  width: 100%;
+}
+
+.eventbrite-case .eventbrite-sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9998;
+  width: min(320px, 86vw);
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: 2rem;
+  padding: 6rem 1.5rem 1.5rem;
+  background: rgba(17, 17, 17, 0.96);
+  border-right: 1px solid rgba(255, 255, 255, 0.16);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
+  transform: translateX(-105%);
+  transition: transform 300ms ease;
+}
+
+.eventbrite-case .eventbrite-shell.sidebar-open .eventbrite-sidebar {
+  transform: translateX(0);
+}
+
+.eventbrite-case .eventbrite-sidebar-brand {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.eventbrite-case .eventbrite-sidebar-brand strong {
+  color: #ffffff;
+  font-size: 1.3rem;
+  line-height: 1.1;
+}
+
+.eventbrite-case .eventbrite-sidebar-nav {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.eventbrite-case .eventbrite-sidebar-nav a {
+  color: rgba(255, 255, 255, 0.72);
+  font-weight: 700;
+  transition: color 200ms ease, transform 200ms ease;
+}
+
+.eventbrite-case .eventbrite-sidebar-nav a:hover,
+.eventbrite-case .eventbrite-sidebar-nav a:focus-visible {
+  color: var(--eb-accent);
+  transform: translateX(4px);
+}
+
+.eventbrite-case .eventbrite-sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9997;
+  background: rgba(0, 0, 0, 0.48);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 300ms ease;
+}
+
+.eventbrite-case .eventbrite-shell.sidebar-open .eventbrite-sidebar-overlay {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle {
+  position: fixed;
+  top: 96px;
+  left: 24px;
+  z-index: 9999;
+  width: 44px;
+  height: 44px;
+  min-width: 44px;
+  min-height: 44px;
+  display: grid;
+  place-items: center;
+  padding: 0;
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 14px;
+  background: rgba(17, 17, 17, 0.92);
+  color: #ffffff;
+  box-shadow: 0 10px 28px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  transition: left 300ms ease, background 200ms ease, transform 200ms ease;
+}
+
+.eventbrite-case .eventbrite-shell.sidebar-open .eventbrite-sidebar-toggle.sidebar-toggle {
+  left: calc(min(320px, 86vw) - 22px);
+}
+
+.eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle:hover {
+  background: var(--eb-accent);
+  color: #ffffff;
+  transform: scale(1.04);
+}
+
+.eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle span {
+  width: auto;
+  height: auto;
+  display: block;
+  background: transparent;
+  border-radius: 0;
+  font-size: 1.55rem;
+  font-weight: 800;
+  line-height: 1;
+  transition: none;
+}
+
+.eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle:hover span {
+  background: transparent;
+}
+
+.eventbrite-case .eventbrite-toggle-close {
+  display: none !important;
+}
+
+.eventbrite-case .eventbrite-shell.sidebar-open .eventbrite-toggle-open {
+  display: none !important;
+}
+
+.eventbrite-case .eventbrite-shell.sidebar-open .eventbrite-toggle-close {
+  display: block !important;
+}
+
+@media (max-width: 620px) {
+  .eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle {
+    top: 92px;
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    min-height: 40px;
+  }
+
+  .eventbrite-case .eventbrite-sidebar {
+    padding-top: 5.5rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .eventbrite-case .eventbrite-sidebar,
+  .eventbrite-case .eventbrite-sidebar-overlay,
+  .eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle {
+    transition: none;
+  }
+}

@@ -1,4 +1,4 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 
 <head>
@@ -14,14 +14,13 @@
     
 
 
-
 <body>
-    <header class="navbar">
+<header class="navbar">
     <div class="container">
         <div class="navbar-brand">
             <a href="/index.html"><span class="logo">Pedro Porto</span></a>
         </div>
-        <nav class="navbar-menu">
+<nav class="navbar-menu">
     <ul>
         <li><a href="/index.html">Home</a></li>
         <li><a href="/portfolio.html">Portfolio</a></li>
@@ -29,87 +28,255 @@
     </ul>
 </nav>
 
-
     </div>
 </header>
 
 
+    <main class="eventbrite-case project-case" id="eventbriteCase">
+        <div class="eventbrite-shell" id="eventbriteShell">
+            <button class="eventbrite-sidebar-toggle sidebar-toggle" id="sidebarToggle" type="button" aria-label="Open sidebar" aria-controls="sidebar" aria-expanded="false">
+                <span class="eventbrite-toggle-open" aria-hidden="true">☰</span>
+                <span class="eventbrite-toggle-close" aria-hidden="true">×</span>
+            </button>
 
-    <main>
-        <article class="project-detail">
-            <header class="project-detail-hero section-fade">
-                <div class="container narrow">
-                    <a href="/portfolio.html" class="back-link">Back to portfolio</a>
-                    <p class="eyebrow">Project Two</p>
-                    <h1>Eventbrite Wallet â€” Reducing Queues and Unlocking In-Event Revenue</h1>
-                    <p class="lead">A product concept that expands Eventbrite beyond ticketing by introducing a digital
-                        wallet for food, beverages and event services. The solution reduces purchase friction, improves
-                        attendee experience and creates a new revenue opportunity for organizers and the platform.</p>
+            <aside class="eventbrite-sidebar sidebar" id="sidebar" aria-label="Eventbrite case study navigation">
+                <div class="eventbrite-sidebar-brand">
+                    <p class="eventbrite-section-label">Eventbrite Wallet</p>
+                    <strong>Case Study</strong>
                 </div>
+                <nav class="eventbrite-sidebar-nav">
+                    <a href="#eventbrite-overview">Overview</a>
+                    <a href="#eventbrite-context">Context</a>
+                    <a href="#eventbrite-benchmark">Benchmark</a>
+                    <a href="#eventbrite-journey">Journey</a>
+                    <a href="#eventbrite-solution">Solution</a>
+                    <a href="#eventbrite-business">Business</a>
+                    <a href="#eventbrite-next">Next Steps</a>
+                </nav>
+            </aside>
+
+            <div class="eventbrite-sidebar-overlay" id="eventbriteSidebarOverlay" aria-hidden="true"></div>
+
+        <article class="eventbrite-case-study" id="mainContent">
+            <header class="eventbrite-hero">
+                <div class="eventbrite-hero-copy">
+                    <a href="/portfolio.html" class="back-link">Back to portfolio</a>
+                    <p class="eventbrite-section-label">Project Two / Eventbrite Wallet</p>
+                    <h1>Eventbrite Wallet — Reducing Queues and Unlocking In-Event Revenue</h1>
+                    <p>A product concept that expands Eventbrite beyond ticketing by introducing a digital wallet for food, beverages and event services. The solution reduces purchase friction, improves attendee experience and creates a new revenue opportunity for organizers and the platform.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame eventbrite-hero-slide">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-cover%20@1x.png" alt="Eventbrite Wallet case study cover slide" loading="eager">
+                    <figcaption>Cover slide introducing the Eventbrite Wallet case study.</figcaption>
+                </figure>
             </header>
 
-            <section class="project-media-section">
-                <div class="container">
-                    <figure class="case-image case-image-hero">
-                        <img src="/assets/images/projects/eventbrite-wallet-hero@1x.jpg" srcset="/assets/images/projects/eventbrite-wallet-hero@1x.jpg 1x, /assets/images/projects/eventbrite-wallet-hero@2x.jpg 2x" width="1600" height="900" alt="Placeholder hero image for the Eventbrite Wallet case study" loading="eager" decoding="async">
-                        <figcaption>Hero image slot: replace with the strongest product mockup or event journey image.</figcaption>
-                    </figure>
+            <section class="eventbrite-meta-grid" id="eventbrite-overview" aria-label="Project information">
+                <div>
+                    <span>Date</span>
+                    <strong>January 2026</strong>
+                </div>
+                <div>
+                    <span>Team</span>
+                    <strong>3 members</strong>
+                </div>
+                <div>
+                    <span>Context</span>
+                    <strong>Academic</strong>
+                </div>
+                <div>
+                    <span>Role</span>
+                    <strong>Product Concept / UX Strategy / Business Opportunity / Flow Design</strong>
                 </div>
             </section>
 
-            <section class="project-body-section">
-                <div class="container detail-grid">
-                    <div class="detail-content">
-                        <h2>Overview</h2>
-                        <p>Events are meant to be lived, not waited for. But in many live experiences, attendees lose
-                            valuable time in queues while organizers lose revenue due to limited service capacity, poor
-                            demand predictability and abandoned purchases.</p>
-
-                        <p>The opportunity was to expand Eventbriteâ€™s role beyond ticketing by supporting the full
-                            event consumption journey. The proposed solution introduces a digital wallet inside the
-                            Eventbrite app, allowing users to buy in advance or during the event and redeem purchases
-                            with less friction.</p>
-                        <figure class="case-image case-image-inline">
-                            <img src="/assets/images/projects/eventbrite-wallet-process-01@1x.jpg" srcset="/assets/images/projects/eventbrite-wallet-process-01@1x.jpg 1x, /assets/images/projects/eventbrite-wallet-process-01@2x.jpg 2x" width="1200" height="750" alt="Placeholder for Eventbrite Wallet process image, such as journey mapping or purchase flow" loading="lazy" decoding="async">
-                            <figcaption>Process image slot: attendee journey, service flow, or opportunity map.</figcaption>
-                        </figure>
-                        <h2>Process</h2>
-                        <p>The design approach focused on two core journeys: pre-event purchase and in-event purchase.
-                            Before the event, users can buy tickets and add drinks or services in advance. During the
-                            event, they can purchase in real time, show a QR code and quickly return to the experience.
-                        </p>
-
-                        <p>The main design challenge was speed. In an event context, every extra step increases
-                            friction. Instead of reinventing event consumption, the concept improves behaviors that
-                            already exist: buying, paying and redeeming.</p>
-                        <figure class="case-image case-image-inline">
-                            <img src="/assets/images/projects/eventbrite-wallet-wireframe-01@1x.jpg" srcset="/assets/images/projects/eventbrite-wallet-wireframe-01@1x.jpg 1x, /assets/images/projects/eventbrite-wallet-wireframe-01@2x.jpg 2x" width="1200" height="750" alt="Placeholder for Eventbrite Wallet wireframe or interface image" loading="lazy" decoding="async">
-                            <figcaption>Interface image slot: wallet flow, QR redemption, or wireframe sequence.</figcaption>
-                        </figure>
-                    </div>
-                    <aside class="project-facts">
-                        <h2>Details</h2>
-                        <dl>
-                            <dt>Date</dt>
-                            <dd>January 2026</dd>
-                            <dt>Team</dt>
-                            <dd>3 members</dd>
-                            <dt>Context</dt>
-                            <dd>Academic</dd>
-                            <dt>Role</dt>
-                            <dd>Product Concept / UX Strategy / Business Opportunity / Flow Design</dd>
-                            <dt>Methods:</dt>
-                            <dd>Problem Framing, Journey Mapping, Product Strategy, Wireframing, Business Impact Estimation</dd>
-                            <dt>Opportunity:</dt>
-                            <dd>Reduced queue friction, higher attendee satisfaction, new in-event revenue stream</dd>
-                        </dl>
-                    </aside>
+            <section class="eventbrite-story-section" id="eventbrite-context">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">Context</p>
+                    <h2>Events are meant to be lived, not waited for.</h2>
+                    <p>In many live experiences, attendees lose valuable time in queues while organizers lose revenue due to limited service capacity, poor demand predictability and abandoned purchases.</p>
                 </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-contex%20@1x.jpg" alt="Eventbrite context slide explaining the event experience opportunity" loading="lazy">
+                    <figcaption>Context slide framing the opportunity around friction inside live events.</figcaption>
+                </figure>
+            </section>
+
+            <section class="eventbrite-story-section" id="eventbrite-benchmark">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">Benchmark</p>
+                    <h2>Learning from adjacent digital wallet and event flows.</h2>
+                    <p>The benchmark helped frame how payment, redemption and service interactions could become part of the event journey without overcomplicating the attendee experience.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-benchmark%20@1x.jpg" alt="Eventbrite benchmark slide with comparable digital wallet and event service references" loading="lazy">
+                    <figcaption>Benchmark slide used to compare product patterns and service opportunities.</figcaption>
+                </figure>
+            </section>
+
+            <section class="eventbrite-story-section" id="eventbrite-journey">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">Current Journey</p>
+                    <h2>The current journey creates friction before and during the event.</h2>
+                    <p>Mapping the as-is journey made the waiting points, service capacity limits and purchase drop-offs easier to identify.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-as-is-journey%20@1x.jpg" alt="Eventbrite as-is journey slide mapping the current attendee flow" loading="lazy">
+                    <figcaption>Current journey slide showing the existing flow and where friction appears.</figcaption>
+                </figure>
+            </section>
+
+            <section class="eventbrite-story-section" id="eventbrite-solution">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">Pain Points</p>
+                    <h2>Queue friction has a cost for attendees and organizers.</h2>
+                    <p>Long queues reduce time spent enjoying the event and can translate into missed transactions, lower satisfaction and operational pressure.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-cost-of%20@1x.jpg" alt="Eventbrite pain points slide explaining the cost of queue friction" loading="lazy">
+                    <figcaption>Pain points slide summarizing the cost of friction in event consumption.</figcaption>
+                </figure>
+            </section>
+
+            <section class="eventbrite-story-section" id="eventbrite-business">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">How Might We</p>
+                    <h2>How might Eventbrite support the full event consumption journey?</h2>
+                    <p>The opportunity was to expand Eventbrite’s role beyond ticketing by helping people buy, pay and redeem faster before and during an event.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-hmw%20@1x.jpg" alt="Eventbrite how might we slide defining the product challenge" loading="lazy">
+                    <figcaption>How Might We slide defining the strategic product challenge.</figcaption>
+                </figure>
+            </section>
+
+            <section class="eventbrite-story-section" id="eventbrite-next">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">Solution</p>
+                    <h2>A wallet that connects tickets, purchases and redemption.</h2>
+                    <p>The proposed solution introduces a digital wallet inside Eventbrite, allowing users to buy in advance or during the event and redeem purchases with less friction.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-solution%20@1x.jpg" alt="Eventbrite solution slide introducing the wallet concept" loading="lazy">
+                    <figcaption>Solution slide introducing Eventbrite Wallet as an extension of the ticketing experience.</figcaption>
+                </figure>
+            </section>
+
+            <section class="eventbrite-story-section">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">Design Approach</p>
+                    <h2>Speed, clarity and redemption guided the design approach.</h2>
+                    <p>In an event context, every extra step increases friction. The concept improves behaviors that already exist: buying, paying and redeeming.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-design-approach%20@1x.jpg" alt="Eventbrite design approach slide explaining the design principles" loading="lazy">
+                    <figcaption>Design approach slide outlining the principles behind the wallet experience.</figcaption>
+                </figure>
+            </section>
+
+            <section class="eventbrite-story-section">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">Two Core Journeys</p>
+                    <h2>The experience is organized around two core journeys.</h2>
+                    <p>The flow supports both pre-event purchase and in-event purchase, giving users flexibility before and during the experience.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-two-core-journeys%20@1x.jpg" alt="Eventbrite two core journeys slide showing before-event and during-event flows" loading="lazy">
+                    <figcaption>Two core journeys slide showing how the concept adapts across moments.</figcaption>
+                </figure>
+            </section>
+
+            <section class="eventbrite-story-section">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">Before Event</p>
+                    <h2>Before the event, users can plan and buy ahead.</h2>
+                    <p>Users can buy tickets and add drinks, food or services in advance, reducing uncertainty and improving demand predictability.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-before-event-journeys%20@1x.jpg" alt="Eventbrite before-event journey slide showing advance purchase flow" loading="lazy">
+                    <figcaption>Before-event journey slide showing how users can purchase ahead of time.</figcaption>
+                </figure>
+            </section>
+
+            <section class="eventbrite-story-section">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">During Event</p>
+                    <h2>During the event, the flow prioritizes quick purchase and redemption.</h2>
+                    <p>Users can purchase in real time, show a QR code and quickly return to the experience.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-during-event-journeys%20@1x.jpg" alt="Eventbrite during-event journey slide showing in-event purchase and QR redemption" loading="lazy">
+                    <figcaption>During-event journey slide showing purchase and QR-based redemption.</figcaption>
+                </figure>
+            </section>
+
+            <section class="eventbrite-story-section">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">Value Ecosystem</p>
+                    <h2>The wallet creates value for attendees, organizers and Eventbrite.</h2>
+                    <p>The concept improves the attendee experience while creating better demand signals and new commercial opportunities for organizers and the platform.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-value-ecosystem%20@1x.jpg" alt="Eventbrite value ecosystem slide showing stakeholder value" loading="lazy">
+                    <figcaption>Value ecosystem slide connecting attendee, organizer and platform benefits.</figcaption>
+                </figure>
+            </section>
+
+            <section class="eventbrite-story-section">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">Business Model</p>
+                    <h2>The business model expands Eventbrite beyond ticket revenue.</h2>
+                    <p>The wallet opens a path to capture value from in-event transactions and service partnerships.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-revenue%20@1x.jpg" alt="Eventbrite revenue slide explaining the business model opportunity" loading="lazy">
+                    <figcaption>Business model slide describing the revenue opportunity behind Eventbrite Wallet.</figcaption>
+                </figure>
+            </section>
+
+            <section class="eventbrite-story-section">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">Business Opportunity</p>
+                    <h2>Quantifying the opportunity makes the concept strategically relevant.</h2>
+                    <p>The case estimates how reducing queue friction and unlocking in-event revenue could create measurable value.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-qt-opportunity%20@1x.jpg" alt="Eventbrite business opportunity slide quantifying the value of the concept" loading="lazy">
+                    <figcaption>Business opportunity slide quantifying the potential impact of the solution.</figcaption>
+                </figure>
+            </section>
+
+            <section class="eventbrite-story-section">
+                <div class="eventbrite-section-heading">
+                    <p class="eventbrite-section-label">Next Steps</p>
+                    <h2>Final considerations and next steps.</h2>
+                    <p>The next step would be validating purchase intent, redemption behavior and organizer appetite through prototyping and pilot testing.</p>
+                </div>
+
+                <figure class="eventbrite-slide-frame">
+                    <img class="eventbrite-slide-image" src="assets/images/projects/eventbrite/eventbrite-final-consideration%20@1x.jpg" alt="Eventbrite final considerations slide with next steps" loading="lazy">
+                    <figcaption>Final considerations slide closing the case study and outlining next steps.</figcaption>
+                </figure>
             </section>
         </article>
+        </div>
     </main>
 
-    <footer class="footer">
+<footer class="footer">
     <div class="container">
         <div class="footer-content">
             <div class="footer-section">
@@ -140,9 +307,43 @@
     </div>
 </footer>
 
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const shell = document.getElementById('eventbriteShell');
+            const toggle = document.getElementById('sidebarToggle');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('eventbriteSidebarOverlay');
 
+            if (!shell || !toggle || !sidebar || !overlay) return;
+
+            const setSidebarOpen = function (isOpen) {
+                shell.classList.toggle('sidebar-open', isOpen);
+                toggle.setAttribute('aria-expanded', String(isOpen));
+                toggle.setAttribute('aria-label', isOpen ? 'Close sidebar' : 'Open sidebar');
+            };
+
+            toggle.addEventListener('click', function (event) {
+                event.stopPropagation();
+                setSidebarOpen(!shell.classList.contains('sidebar-open'));
+            });
+
+            overlay.addEventListener('click', function () {
+                setSidebarOpen(false);
+            });
+
+            sidebar.addEventListener('click', function (event) {
+                if (event.target.closest('a')) {
+                    setSidebarOpen(false);
+                }
+            });
+
+            document.addEventListener('keydown', function (event) {
+                if (event.key === 'Escape') {
+                    setSidebarOpen(false);
+                }
+            });
+        });
+    </script>
 </body>
 
 </html>
-
-
