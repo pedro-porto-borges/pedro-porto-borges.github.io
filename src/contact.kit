@@ -1,121 +1,215 @@
 <!DOCTYPE html>
 <html lang="en">
 
-<!--@import "_head.kit"-->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="About Pedro Porto Borges, including biography, experience, education, and social links.">
+    <title>About Pedro Porto Borges - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/assets/css/estilo.min.css">
+</head>
 
-<body>
+<body class="about-page">
     <!--@import "_header.kit"-->
 
-    <main>
-        <section class="page-hero section-fade">
-            <div class="container narrow">
-                <p class="eyebrow">Contact</p>
-                <h1>About Pedro Porto Borges.</h1>
-                <p class="lead">Replace this page with your real biography, contact details, and the networks where
-                    people can follow your work.</p>
-            </div>
-        </section>
-
-        <section class="contact-section">
-            <div class="container contact-grid">
-                <div class="about-panel">
-                    <h2>Short bio</h2>
-                    <p>I am a student and creator interested in web experiences, visual communication, and thoughtful
-                        front-end development. This paragraph is a placeholder for your real background, interests, and
-                        goals.</p>
-                    <p>Add a little personality here: what you enjoy building, what you are learning, and what kind of
-                        collaborations you are open to.</p>
-                </div>
-                <aside class="social-panel">
-                    <h2>External links</h2>
-                    <a href="https://github.com/" target="_blank" rel="noopener">GitHub</a>
-                    <a href="https://linkedin.com/" target="_blank" rel="noopener">LinkedIn</a>
-                    <a href="https://instagram.com/" target="_blank" rel="noopener">Instagram</a>
-                    <a href="https://behance.net/" target="_blank" rel="noopener">Behance</a>
-                </aside>
-            </div>
-        </section>
-
-        <section class="personal-section">
-            <div class="container">
-                <div class="personal-feature">
-                    <figure class="profile-photo">
-                        <img src="/assets/images/personal/pedro-profile@1x.jpeg"
-                            srcset="/assets/images/personal/pedro-profile@1x.jpeg 1x, /assets/images/personal/pedro-profile@2x.jpeg 2x"
-                            width="900" height="1125" alt="Placeholder profile photo of Pedro Porto Borges"
-                            loading="lazy" decoding="async">
-                    </figure>
-                    <div class="personal-copy">
-                        <p class="eyebrow">Personal side</p>
-                        <h2>A few details beyond the work.</h2>
-                        <p>This section is designed for a professional but human introduction. Replace the image slots
-                            with moments that show personality, curiosity, creative process, and life outside product
-                            work.</p>
+    <main class="about-main page-wrapper">
+        <section class="about-hero hero" id="about">
+            <div class="hero-carousel">
+                <div class="carousel" role="region" aria-label="Photo carousel">
+                    <div class="carousel-track">
+                        <div class="carousel-slide active">
+                            <img src="assets/images/personal/pedro-profile@1x.jpeg"
+                                srcset="assets/images/personal/pedro-profile@1x.jpeg 1x, assets/images/personal/pedro-profile@2x.jpeg 2x"
+                                width="900" height="1125" alt="Portrait of Pedro Porto Borges" loading="eager"
+                                decoding="async">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/images/personal/pedro-travel-01@1x.jpeg"
+                                srcset="assets/images/personal/pedro-travel-01@1x.jpeg 1x, assets/images/personal/pedro-travel-01@2x.jpeg 2x"
+                                width="800" height="800" alt="Pedro travelling and exploring new places" loading="lazy"
+                                decoding="async">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/images/personal/pedro-analog-photo-01@1x.jpeg"
+                                srcset="assets/images/personal/pedro-analog-photo-01@1x.jpeg 1x, assets/images/personal/pedro-analog-photo-01@2x.jpeg 2x"
+                                width="800" height="800" alt="Analog photography moment from Pedro's personal work"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/images/personal/pedro-cooking-01@1x.jpeg"
+                                srcset="assets/images/personal/pedro-cooking-01@1x.jpeg 1x, assets/images/personal/pedro-cooking-01@2x.jpeg 2x"
+                                width="800" height="800" alt="Pedro cooking as part of his personal interests"
+                                loading="lazy" decoding="async">
+                        </div>
+                        <div class="carousel-slide">
+                            <img src="assets/images/personal/pedro-sports-01@1x.jpeg"
+                                srcset="assets/images/personal/pedro-sports-01@1x.jpeg 1x, assets/images/personal/pedro-sports-01@2x.jpeg 2x"
+                                width="800" height="800" alt="Pedro enjoying sports outside of work" loading="lazy"
+                                decoding="async">
+                        </div>
+                    </div>
+                    <button class="carousel-prev" type="button" aria-label="Previous slide">‹</button>
+                    <button class="carousel-next" type="button" aria-label="Next slide">›</button>
+                    <div class="carousel-indicators" aria-hidden="true">
+                        <span class="indicator active"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
+                        <span class="indicator"></span>
                     </div>
                 </div>
-
-                <div class="personal-gallery" aria-label="Personal photo gallery">
-                    <figure>
-                        <img src="/assets/images/personal/pedro-travel-01@1x.jpeg"
-                            srcset="/assets/images/personal/pedro-travel-01@1x.jpeg 1x, /assets/images/personal/pedro-travel-01@2x.jpeg 2x"
-                            width="800" height="800" alt="Placeholder photo for travel moments" loading="lazy"
-                            decoding="async">
-                        <figcaption>Travel</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="/assets/images/personal/pedro-analog-photo-01@1x.jpeg"
-                            srcset="/assets/images/personal/pedro-analog-photo-01@1x.jpeg 1x, /assets/images/personal/pedro-analog-photo-01@2x.jpeg 2x"
-                            width="800" height="800" alt="Placeholder photo for analog photography" loading="lazy"
-                            decoding="async">
-                        <figcaption>Analog photography</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="/assets/images/personal/pedro-cooking-01@1x.jpeg"
-                            srcset="/assets/images/personal/pedro-cooking-01@1x.jpeg 1x, /assets/images/personal/pedro-cooking-01@2x.jpeg 2x"
-                            width="800" height="800" alt="Placeholder photo for cooking" loading="lazy"
-                            decoding="async">
-                        <figcaption>Cooking</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="/assets/images/personal/pedro-sports-01@1x.jpeg"
-                            srcset="/assets/images/personal/pedro-sports-01@1x.jpeg 1x, /assets/images/personal/pedro-sports-01@2x.jpeg 2x"
-                            width="800" height="800" alt="Placeholder photo for sports" loading="lazy" decoding="async">
-                        <figcaption>Sports</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="/assets/images/personal/pedro-music-01@1x.jpeg"
-                            srcset="/assets/images/personal/pedro-music-01@1x.jpeg 1x, /assets/images/personal/pedro-music-01@2x.jpeg 2x"
-                            width="800" height="800" alt="Placeholder photo for music interests" loading="lazy"
-                            decoding="async">
-                        <figcaption>Music</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="/assets/images/personal/pedro-city-01@1x.jpeg"
-                            srcset="/assets/images/personal/pedro-city-01@1x.jpeg 1x, /assets/images/personal/pedro-city-01@2x.jpeg 2x"
-                            width="800" height="800" alt="Placeholder photo for city and lifestyle moments"
-                            loading="lazy" decoding="async">
-                        <figcaption>City life</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="/assets/images/personal/pedro-creative-process-01@1x.jpeg"
-                            srcset="/assets/images/personal/pedro-creative-process-01@1x.jpeg 1x, /assets/images/personal/pedro-creative-process-01@2x.jpeg 2x"
-                            width="800" height="800" alt="Placeholder photo for creative process moments" loading="lazy"
-                            decoding="async">
-                        <figcaption>Creative process</figcaption>
-                    </figure>
-                    <figure>
-                        <img src="/assets/images/personal/pedro-lifestyle-01@1x.jpeg"
-                            srcset="/assets/images/personal/pedro-lifestyle-01@1x.jpeg 1x, /assets/images/personal/pedro-lifestyle-01@2x.jpeg 2x"
-                            width="800" height="800" alt="Placeholder photo for lifestyle moments" loading="lazy"
-                            decoding="async">
-                        <figcaption>Lifestyle</figcaption>
-                    </figure>
-                </div>
             </div>
+
+            <div class="hero-side">
+                <article class="bio-card">
+                    <h1>Hi, I'm Pedro Porto</h1>
+                    <div class="bio-copy">
+                        <p><strong>Short bio</strong></p>
+                        <p>I am a product-minded designer and student interested in digital experiences, visual
+                            communication, and thoughtful front-end development.</p>
+                        <p>My work connects business, data, and design to make customer journeys clearer, faster, and
+                            more useful. Outside of product work, I am drawn to photography, cooking, music, sports, and
+                            the small rituals that make a creative process feel alive.</p>
+                    </div>
+                </article>
+
+                <nav class="social-links" aria-label="External links">
+                    <a href="https://github.com/pedro-porto-borges/" target="_blank" rel="noopener">
+                        <span class="social-icon" aria-hidden="true">GH</span>
+                        <span>GitHub</span>
+                    </a>
+                    <a href="https://www.linkedin.com/in/pedro-porto-borges-789371208/" target="_blank"
+                        rel="noopener">
+                        <span class="social-icon" aria-hidden="true">in</span>
+                        <span>LinkedIn</span>
+                    </a>
+                    <a href="https://instagram.com/analog.pp/" target="_blank" rel="noopener">
+                        <span class="social-icon" aria-hidden="true">IG</span>
+                        <span>Instagram</span>
+                    </a>
+                    <a href="https://www.behance.net/pedroportoborges" target="_blank" rel="noopener">
+                        <span class="social-icon" aria-hidden="true">Bē</span>
+                        <span>Behance</span>
+                    </a>
+                </nav>
+            </div>
+        </section>
+
+        <div class="scroll-indicator">
+            <a href="#experiences" aria-label="Scroll to experience and education section">
+                <span>View experience &amp; education</span>
+                <span aria-hidden="true">⌄</span>
+            </a>
+        </div>
+
+        <section id="experiences" class="experience-education" aria-label="Experience and education">
+            <article class="experiences-card">
+                <h2>Experiences</h2>
+                <div class="timeline-list">
+                    <div class="timeline-item">
+                        <div>
+                            <h3>Product Analyst - Credit Cards</h3>
+                            <p>Itaú Unibanco S.A. (LuizaCred)</p>
+                        </div>
+                        <div>
+                            <strong>Apr 2023 - Sep 2025</strong>
+                            <p>São Paulo, Brazil</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div>
+                            <h3>Intern - Financial Control</h3>
+                            <p>Sumitomo Mitsui Banking Corporation</p>
+                        </div>
+                        <div>
+                            <strong>Oct 2022 - Mar 2023</strong>
+                            <p>São Paulo, Brazil</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div>
+                            <h3>Intern - Business Development</h3>
+                            <p>Creditas</p>
+                        </div>
+                        <div>
+                            <strong>Jan 2021 - Feb 2022</strong>
+                            <p>São Paulo, Brazil</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
+
+            <article class="education-card">
+                <h2>Education</h2>
+                <div class="timeline-list">
+                    <div class="timeline-item">
+                        <div>
+                            <h3>Postgraduate in Digital Experience Design</h3>
+                            <p>University of Lisbon (ULisboa)</p>
+                        </div>
+                        <div>
+                            <strong>Graduated: Jul 2026</strong>
+                            <p>Lisbon, Portugal</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div>
+                            <h3>Bachelor's Degree in Accounting</h3>
+                            <p>University of São Paulo (USP)</p>
+                        </div>
+                        <div>
+                            <strong>Graduated: Dec 2024</strong>
+                            <p>São Paulo, Brazil</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item">
+                        <div>
+                            <h3>Academic Exchange</h3>
+                            <p>University of Coimbra (UC)</p>
+                        </div>
+                        <div>
+                            <strong>Feb - Jul 2022</strong>
+                            <p>Coimbra, Portugal</p>
+                        </div>
+                    </div>
+                </div>
+            </article>
         </section>
     </main>
 
     <!--@import "_footer.kit"-->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const carousel = document.querySelector('.about-page .carousel');
+            if (!carousel) return;
+
+            const slides = Array.from(carousel.querySelectorAll('.carousel-slide'));
+            const indicators = Array.from(carousel.querySelectorAll('.indicator'));
+            const prev = carousel.querySelector('.carousel-prev');
+            const next = carousel.querySelector('.carousel-next');
+            let activeIndex = 0;
+
+            const showSlide = (index) => {
+                activeIndex = (index + slides.length) % slides.length;
+
+                slides.forEach((slide, slideIndex) => {
+                    slide.classList.toggle('active', slideIndex === activeIndex);
+                });
+
+                indicators.forEach((indicator, indicatorIndex) => {
+                    indicator.classList.toggle('active', indicatorIndex === activeIndex);
+                });
+            };
+
+            prev.addEventListener('click', () => showSlide(activeIndex - 1));
+            next.addEventListener('click', () => showSlide(activeIndex + 1));
+        });
+    </script>
 </body>
 
 </html>
