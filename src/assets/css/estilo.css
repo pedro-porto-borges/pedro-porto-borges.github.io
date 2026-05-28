@@ -1871,3 +1871,396 @@ button:focus-visible,
         font-size: 0.8rem;
     }
 }
+
+/* About page */
+.about-page {
+    background: #ffffff;
+    color: #000000;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.about-page h1,
+.about-page h2,
+.about-page h3,
+.about-page .navbar-brand a,
+.about-page .navbar-menu a {
+    font-family: "Outfit", sans-serif;
+}
+
+.page-wrapper {
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+.about-main {
+    padding: 32px 24px 0;
+}
+
+.about-page .hero {
+    padding: 0;
+}
+
+.about-hero {
+    align-items: stretch;
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.hero-carousel {
+    align-self: stretch;
+    min-height: 100%;
+}
+
+.carousel {
+    border-radius: 16px;
+    height: 100%;
+    min-height: 406px;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel-track {
+    inset: 0;
+    position: absolute;
+}
+
+.carousel-slide {
+    height: 100%;
+    inset: 0;
+    opacity: 0;
+    position: absolute;
+    transition: opacity 200ms ease;
+}
+
+.carousel-slide.active {
+    opacity: 1;
+    z-index: 1;
+}
+
+.carousel-slide img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.carousel-prev,
+.carousel-next {
+    align-items: center;
+    background: rgba(255, 255, 255, 0.9);
+    border: 1px solid #000000;
+    border-radius: 50%;
+    color: #000000;
+    cursor: pointer;
+    display: flex;
+    font-size: 32px;
+    height: 48px;
+    justify-content: center;
+    line-height: 1;
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: background 200ms ease, opacity 200ms ease;
+    width: 48px;
+    z-index: 2;
+}
+
+.carousel:hover .carousel-prev,
+.carousel:hover .carousel-next,
+.carousel-prev:focus-visible,
+.carousel-next:focus-visible {
+    opacity: 1;
+}
+
+.carousel-prev:hover,
+.carousel-next:hover {
+    background: #ffffff;
+}
+
+.carousel-prev {
+    left: 16px;
+}
+
+.carousel-next {
+    right: 16px;
+}
+
+.carousel-indicators {
+    bottom: 16px;
+    display: flex;
+    gap: 8px;
+    left: 50%;
+    position: absolute;
+    transform: translateX(-50%);
+    z-index: 2;
+}
+
+.indicator {
+    background: rgba(255, 255, 255, 0.64);
+    border-radius: 999px;
+    display: block;
+    height: 8px;
+    transition: background 200ms ease, width 200ms ease;
+    width: 8px;
+}
+
+.indicator.active {
+    background: #ffffff;
+    width: 24px;
+}
+
+.hero-side {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.bio-card,
+.social-links a,
+.experiences-card,
+.education-card {
+    background: #fdfdfd;
+    border: 1px solid #000000;
+    border-radius: 16px;
+}
+
+.bio-card {
+    padding: 24px;
+}
+
+.bio-card h1 {
+    color: #000000;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 16px;
+}
+
+.bio-copy {
+    display: grid;
+    gap: 16px;
+}
+
+.bio-copy p,
+.timeline-item p {
+    color: #000000;
+    font-size: 16px;
+    line-height: 1.6;
+    max-width: none;
+}
+
+.bio-copy strong,
+.timeline-item strong {
+    color: #000000;
+    font-weight: 700;
+}
+
+.social-links {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.social-links a {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: center;
+    min-height: 104px;
+    padding: 16px 8px;
+    transition: background 200ms ease, transform 200ms ease;
+}
+
+.social-links a:hover {
+    background: #f5f5f5;
+    transform: translateY(-2px);
+}
+
+.social-icon {
+    align-items: center;
+    color: #000000;
+    display: flex;
+    font-family: "Outfit", sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    height: 24px;
+    justify-content: center;
+    line-height: 1;
+}
+
+.social-links span:last-child {
+    color: #000000;
+    font-size: 14px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.scroll-indicator {
+    display: flex;
+    justify-content: center;
+    padding: 32px 0 24px;
+}
+
+.scroll-indicator a {
+    align-items: center;
+    color: rgba(0, 0, 0, 0.64);
+    display: flex;
+    flex-direction: column;
+    font-size: 14px;
+    font-weight: 500;
+    gap: 8px;
+    transition: color 200ms ease;
+}
+
+.scroll-indicator a:hover {
+    color: #000000;
+}
+
+.scroll-indicator span:last-child {
+    animation: aboutBounce 1200ms ease-in-out infinite;
+    font-size: 24px;
+    line-height: 1;
+}
+
+.experience-education {
+    display: grid;
+    gap: 32px;
+    grid-template-columns: 1fr 1fr;
+}
+
+.experiences-card,
+.education-card {
+    padding: 32px;
+}
+
+.experiences-card h2,
+.education-card h2 {
+    color: #000000;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 24px;
+}
+
+.timeline-list {
+    display: grid;
+    gap: 16px;
+}
+
+.timeline-item {
+    border-bottom: 1px solid #eeeeee;
+    display: grid;
+    gap: 16px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    padding-bottom: 16px;
+}
+
+.timeline-item:last-child {
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.timeline-item h3 {
+    color: #000000;
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 1.5;
+}
+
+.timeline-item div:last-child {
+    text-align: right;
+}
+
+.timeline-item strong {
+    display: block;
+    font-size: 16px;
+    line-height: 1.5;
+}
+
+.about-page .footer {
+    margin-top: 48px;
+}
+
+@keyframes aboutBounce {
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(8px);
+    }
+}
+
+@media (max-width: 1024px) {
+    .about-hero,
+    .experience-education {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-carousel {
+        order: 2;
+    }
+
+    .hero-side {
+        order: 1;
+    }
+
+    .carousel {
+        height: 400px;
+        min-height: 400px;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-main {
+        padding: 24px 16px 0;
+    }
+
+    .about-hero,
+    .experience-education {
+        gap: 24px;
+    }
+
+    .carousel {
+        height: 320px;
+        min-height: 320px;
+    }
+
+    .bio-card,
+    .experiences-card,
+    .education-card {
+        padding: 24px;
+    }
+
+    .bio-card h1,
+    .experiences-card h2,
+    .education-card h2 {
+        font-size: 24px;
+    }
+
+    .social-links {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .timeline-item {
+        grid-template-columns: 1fr;
+    }
+
+    .timeline-item div:last-child {
+        text-align: left;
+    }
+}
+
+@media (max-width: 520px) {
+    .social-links {
+        grid-template-columns: 1fr;
+    }
+
+    .social-links a {
+        min-height: 72px;
+    }
+}
