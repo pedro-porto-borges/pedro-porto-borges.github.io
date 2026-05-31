@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;600&family=Plus+Jakarta+Sans:wght@400;600;700&display=swap");
+
 * {
     -webkit-box-sizing: border-box;
     box-sizing: border-box;
@@ -3500,6 +3502,766 @@ button:focus-visible {
 
     .social-links a {
         min-height: 72px;
+    }
+}
+
+/* React source ports: home and portfolio */
+.react-home-page,
+.react-portfolio-page {
+    background: #ffffff;
+    color: #0a0a0a;
+    font-family: "Plus Jakarta Sans", sans-serif;
+}
+
+.react-home-page *,
+.react-portfolio-page * {
+    letter-spacing: 0;
+}
+
+.react-home-page p,
+.react-portfolio-page p {
+    max-width: none;
+}
+
+.react-page-shell {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.react-container {
+    margin: 0 auto;
+    max-width: 1200px;
+    padding: 0 16px;
+    width: 100%;
+}
+
+.react-site-title,
+.react-home-hero h1,
+.react-home-hero p,
+.react-home-cases h2,
+.react-home-project-title,
+.react-portfolio-header,
+.react-portfolio-hero h1,
+.react-study-meta,
+.react-study-title,
+.react-study-link {
+    font-family: "Outfit", sans-serif;
+}
+
+.react-home-header,
+.react-portfolio-header {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+
+.react-home-nav,
+.react-portfolio-nav {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+
+.react-home-nav {
+    padding: 16px 0;
+}
+
+.react-portfolio-nav {
+    min-height: 100px;
+}
+
+.react-site-title {
+    color: #0a0a0a;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.25;
+}
+
+.react-home-menu,
+.react-footer ul {
+    align-items: center;
+    display: flex;
+    list-style: none;
+}
+
+.react-home-menu {
+    gap: 24px;
+}
+
+.react-home-menu a {
+    color: #0a0a0a;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: opacity 200ms ease;
+}
+
+.react-home-menu a:hover,
+.react-portfolio-menu a:hover,
+.react-footer a:hover {
+    opacity: 0.7;
+}
+
+.react-home-main,
+.react-portfolio-main {
+    flex: 1;
+}
+
+.react-home-hero {
+    padding: 48px 0 32px;
+}
+
+.react-home-hero-copy {
+    margin: 0 auto;
+    max-width: 836px;
+    text-align: center;
+}
+
+.react-home-hero h1 {
+    color: #0a0a0a;
+    font-size: 30px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 12px;
+    max-width: none;
+}
+
+.react-home-hero p {
+    color: #000000;
+    font-size: 18px;
+    line-height: 1.4;
+}
+
+.react-home-cases {
+    padding: 32px 0 48px;
+}
+
+.react-home-cases h2 {
+    color: #0a0a0a;
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin: 0 0 24px;
+    text-align: center;
+}
+
+.react-home-project-grid {
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+}
+
+.react-home-project-card {
+    aspect-ratio: 1 / 1;
+    border-radius: 20px;
+    cursor: pointer;
+    display: grid;
+    overflow: hidden;
+    place-items: center;
+    position: relative;
+    transform-origin: center;
+    transition: transform 300ms ease;
+    width: 100%;
+}
+
+.react-home-project-card:hover {
+    transform: scale(1.05);
+}
+
+.react-home-project-visual {
+    filter: blur(71px);
+    inset: 0;
+    position: absolute;
+}
+
+.react-gradient-itau {
+    background: linear-gradient(132deg, rgb(255, 187, 0) 2.78%, rgb(255, 157, 0) 100.06%);
+}
+
+.react-gradient-eventbrite {
+    background: linear-gradient(132deg, rgb(205, 255, 86) 2.78%, rgb(233, 246, 194) 100.06%);
+}
+
+.react-gradient-wise {
+    background: linear-gradient(132deg, rgb(159, 232, 112) 2.78%, rgb(67, 236, 187) 100.06%);
+}
+
+.react-gradient-fbaul {
+    background: radial-gradient(circle at center, rgb(238, 29, 153), rgb(239, 56, 164), rgb(239, 82, 175), rgb(240, 136, 198), rgb(241, 189, 220), rgb(242, 242, 242));
+}
+
+.react-home-project-title {
+    color: #0a0a0a;
+    display: block;
+    font-size: 24px;
+    line-height: 1.2;
+    padding: 16px;
+    position: relative;
+    text-align: center;
+    z-index: 1;
+}
+
+.react-home-project-title span,
+.react-home-project-title strong {
+    display: block;
+}
+
+.react-home-project-title strong {
+    font-weight: 600;
+}
+
+.react-portfolio-header {
+    border-color: #000000;
+}
+
+.react-portfolio-page .react-container {
+    padding: 0 24px;
+}
+
+.react-portfolio-menu {
+    align-items: center;
+    display: none;
+    gap: 24px;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.react-portfolio-menu a {
+    color: #000000;
+    transition: opacity 200ms ease;
+}
+
+.react-mobile-menu-button {
+    align-items: center;
+    background: transparent;
+    border: 0;
+    color: #000000;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 4px;
+    height: 36px;
+    justify-content: center;
+    padding: 6px;
+    width: 36px;
+}
+
+.react-mobile-menu-button span {
+    background: currentColor;
+    display: block;
+    height: 2px;
+    width: 24px;
+}
+
+.react-portfolio-main {
+    display: flex;
+    flex-direction: column;
+    gap: 32px;
+    padding: 32px 0;
+}
+
+.react-portfolio-hero-panel {
+    background-image: linear-gradient(130.418deg, rgb(219, 244, 255) 0.57767%, rgb(219, 223, 255) 100%);
+    border-radius: 20px;
+    padding: 32px 24px;
+}
+
+.react-portfolio-hero h1 {
+    color: #000000;
+    font-size: 32px;
+    font-weight: 600;
+    line-height: 1.2;
+    margin: 0 0 16px;
+}
+
+.react-portfolio-hero-copy {
+    display: grid;
+    gap: 12px;
+}
+
+.react-portfolio-hero-copy p {
+    color: #000000;
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+.react-portfolio-hero-copy strong {
+    font-size: 20px;
+    font-weight: 700;
+}
+
+.react-portfolio-grid {
+    align-items: start;
+    display: grid;
+    gap: 24px;
+    grid-template-columns: 1fr;
+}
+
+.react-study-card {
+    background: #ffffff;
+    border: 1px solid #000000;
+    border-radius: 20px;
+    color: #000000;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    overflow: hidden;
+}
+
+.react-study-image {
+    display: block;
+    flex-shrink: 0;
+    height: 280px;
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.react-study-image img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.react-study-content {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    padding: 20px 24px 24px;
+}
+
+.react-study-meta {
+    color: #000000;
+    font-size: 16px;
+    line-height: 24px;
+    margin-bottom: 12px;
+}
+
+.react-study-title {
+    color: #000000;
+    display: block;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.25;
+    margin-bottom: 12px;
+}
+
+.react-study-description {
+    color: #000000;
+    display: block;
+    flex: 1;
+    font-size: 13px;
+    line-height: 1.6;
+}
+
+.react-study-link {
+    align-items: center;
+    color: #000000;
+    display: inline-flex;
+    font-size: 14px;
+    gap: 8px;
+    line-height: 24px;
+    margin-top: 20px;
+    position: relative;
+    width: fit-content;
+}
+
+.react-study-link:after {
+    background: #000000;
+    bottom: 0;
+    content: "";
+    height: 1px;
+    left: 0;
+    position: absolute;
+    transition: width 300ms ease;
+    width: 0;
+}
+
+.react-study-link span {
+    opacity: 0.7;
+    transition: opacity 300ms ease, transform 300ms ease;
+}
+
+.react-study-card:hover .react-study-link:after {
+    width: calc(100% - 22px);
+}
+
+.react-study-card:hover .react-study-link span {
+    opacity: 1;
+    transform: translateX(4px);
+}
+
+.react-footer {
+    background: #212914;
+    color: #ffffff;
+    padding: 40px 0;
+    width: 100%;
+}
+
+.react-footer-main {
+    align-items: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.react-footer h2 {
+    color: #ffffff;
+    font-family: "Plus Jakarta Sans", sans-serif;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 1.33;
+    margin: 0;
+}
+
+.react-footer ul {
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.react-footer a {
+    color: #ffffff;
+    font-size: 14px;
+    line-height: 1.5;
+    transition: opacity 200ms ease;
+}
+
+.react-footer p {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 14px;
+    line-height: 20px;
+    margin-top: 24px;
+    padding-top: 24px;
+}
+
+.react-portfolio-page .react-footer {
+    padding: 0;
+}
+
+.react-portfolio-page .react-footer .react-container {
+    padding-bottom: 48px;
+    padding-top: 48px;
+}
+
+.react-portfolio-page .react-footer-main {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 32px;
+}
+
+.react-portfolio-page .react-footer p {
+    border-top: 0;
+    font-size: 12px;
+    line-height: 1.43;
+    margin-top: 0;
+    padding-top: 32px;
+}
+
+@media (min-width: 640px) {
+    .react-home-project-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media (min-width: 768px) {
+    .react-container {
+        padding: 0 24px;
+    }
+
+    .react-home-nav {
+        padding: 24px 0;
+    }
+
+    .react-site-title {
+        font-size: 24px;
+    }
+
+    .react-home-menu {
+        gap: 32px;
+    }
+
+    .react-home-menu a {
+        font-size: 16px;
+    }
+
+    .react-home-hero {
+        padding: 64px 0 32px;
+    }
+
+    .react-home-hero h1 {
+        font-size: 48px;
+        margin-bottom: 16px;
+    }
+
+    .react-home-hero p {
+        font-size: 24px;
+        line-height: 1.25;
+    }
+
+    .react-home-cases {
+        padding: 32px 0 64px;
+    }
+
+    .react-home-cases h2 {
+        font-size: 28px;
+        margin-bottom: 32px;
+    }
+
+    .react-home-project-grid {
+        gap: 32px;
+    }
+
+    .react-home-project-title {
+        font-size: 28px;
+        line-height: 1.4;
+    }
+
+    .react-portfolio-page .react-container {
+        padding: 0 32px;
+    }
+
+    .react-portfolio-menu {
+        display: flex;
+    }
+
+    .react-mobile-menu-button {
+        display: none;
+    }
+
+    .react-portfolio-main {
+        gap: 48px;
+        padding: 40px 0;
+    }
+
+    .react-portfolio-hero-panel {
+        padding: 40px 32px;
+    }
+
+    .react-portfolio-hero h1 {
+        font-size: 36px;
+    }
+
+    .react-portfolio-hero-copy p {
+        font-size: 20px;
+    }
+
+    .react-portfolio-hero-copy strong {
+        font-size: 22px;
+    }
+
+    .react-portfolio-grid {
+        gap: 24px;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+
+    .react-study-image {
+        height: 320px;
+    }
+
+    .react-study-content {
+        padding: 24px 28px 28px;
+    }
+
+    .react-study-meta {
+        font-size: 18px;
+        margin-bottom: 16px;
+    }
+
+    .react-study-title {
+        font-size: 24px;
+        margin-bottom: 16px;
+    }
+
+    .react-study-description {
+        font-size: 14px;
+    }
+
+    .react-study-link {
+        font-size: 15px;
+        margin-top: 24px;
+    }
+
+    .react-footer {
+        padding: 48px 0;
+    }
+
+    .react-footer-main {
+        align-items: center;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    .react-footer h2 {
+        font-size: 24px;
+    }
+
+    .react-footer ul {
+        gap: 24px;
+    }
+
+    .react-footer a {
+        font-size: 16px;
+    }
+
+    .react-footer p {
+        margin-top: 32px;
+        padding-top: 32px;
+    }
+
+    .react-portfolio-page .react-footer .react-container {
+        padding-bottom: 64px;
+        padding-top: 64px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .react-container {
+        padding: 0 32px;
+    }
+
+    .react-site-title {
+        font-size: 30px;
+    }
+
+    .react-home-menu {
+        gap: 48px;
+    }
+
+    .react-home-hero {
+        padding: 96px 0 32px;
+    }
+
+    .react-home-hero h1 {
+        font-size: 60px;
+        line-height: 72px;
+    }
+
+    .react-home-hero p {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .react-home-cases {
+        padding: 48px 0 96px;
+    }
+
+    .react-home-cases h2 {
+        font-size: 32px;
+        line-height: 40px;
+        margin-bottom: 48px;
+    }
+
+    .react-home-project-grid {
+        gap: 52px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .react-home-project-title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .react-portfolio-page .react-container {
+        padding: 0 48px;
+    }
+
+    .react-portfolio-page .react-site-title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+
+    .react-portfolio-menu {
+        gap: 40px;
+        font-size: 20px;
+    }
+
+    .react-portfolio-main {
+        gap: 64px;
+        padding: 48px 0;
+    }
+
+    .react-portfolio-hero-panel {
+        padding: 48px;
+    }
+
+    .react-portfolio-hero h1 {
+        font-size: 40px;
+    }
+
+    .react-portfolio-hero-copy p {
+        font-size: 24px;
+        max-width: 900px;
+    }
+
+    .react-portfolio-hero-copy strong {
+        font-size: 24px;
+    }
+
+    .react-portfolio-grid {
+        column-gap: 16px;
+        row-gap: 24px;
+    }
+
+    .react-study-image {
+        height: 400px;
+    }
+
+    .react-study-content {
+        padding: 24px 36px 32px;
+    }
+
+    .react-study-meta {
+        font-size: 20px;
+        margin-bottom: 18px;
+    }
+
+    .react-study-title {
+        font-size: 32px;
+    }
+
+    .react-study-description {
+        font-size: 16px;
+    }
+
+    .react-study-link {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 520px) {
+    .react-home-menu {
+        gap: 18px;
+    }
+
+    .react-home-menu a {
+        font-size: 13px;
+    }
+
+    .react-site-title {
+        font-size: 18px;
+    }
+
+    .react-portfolio-nav {
+        min-height: 82px;
+    }
+
+    .react-study-image {
+        height: 240px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .react-home-project-card,
+    .react-home-menu a,
+    .react-portfolio-menu a,
+    .react-footer a,
+    .react-study-link:after,
+    .react-study-link span {
+        transition: none;
+    }
+
+    .react-home-project-card:hover {
+        transform: none;
     }
 }
 

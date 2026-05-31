@@ -3,88 +3,94 @@
 
 <!--@import "_head.kit"-->
 
-<body>
-    <!--@import "_header.kit"-->
+<body class="react-portfolio-page">
+    <div class="react-page-shell">
+        <!--@import "_header.kit"-->
 
-    <main>
-        <section class="page-hero section-fade">
-            <div class="container narrow">
-                <p class="eyebrow">Portfolio</p>
-                <h1>Selected projects, experiments, and case studies.</h1>
-                <p class="lead">A curated overview of four projects. Each card links to a detail page with space for
-                    your process, technologies, screenshots, and dates.</p>
-            </div>
-        </section>
-
-        <section class="work-list-section">
-            <div class="container">
-                <div class="project-grid project-grid-large">
-                    <article class="project-card">
-                        <a href="/project-1.html" class="project-cover" aria-label="Open Project One">
-                            <img src="/assets/images/projects/mova-hero@1x.jpg"
-                                srcset="/assets/images/projects/mova-hero@1x.jpg 1x, /assets/images/projects/mova-hero@2x.jpg 2x"
-                                width="1200" height="750"
-                                alt="Placeholder image for the MOVA assisted sales journey case study" loading="eager"
-                                decoding="async">
-                        </a>
-                        <div class="project-card-body">
-                            <p class="project-meta">Professional / 2024</p>
-                            <h2><a href="/project-1.html">Itaú - Assisted Sales Channel</a></h2>
-                            <p>Simplifying a sensitive financial journey inside retail stores, balancing operational
-                                speed, customer clarity and compliance.</p>
-                            <a href="/project-1.html" class="text-link">Read case study</a>
+        <main class="react-portfolio-main">
+            <section class="react-portfolio-hero" aria-labelledby="portfolio-title">
+                <div class="react-container">
+                    <div class="react-portfolio-hero-panel">
+                        <h1 id="portfolio-title">Portfolio</h1>
+                        <div class="react-portfolio-hero-copy">
+                            <p><strong>Selected projects, experiments, and case studies.</strong></p>
+                            <p>A curated overview of four projects. Each card links to a detail page with space for your process, technologies, screenshots, and dates.</p>
                         </div>
-                    </article>
-                    <article class="project-card">
-                        <a href="/project-2.html" class="project-cover" aria-label="Open Project Two">
-                            <img src="assets\images\projects\eventbrite\eventbrite-cover @1x.png"
-                                srcset="assets\images\projects\eventbrite\eventbrite-cover @1x.png, assets\images\projects\eventbrite\eventbrite-cover @1x.png"
-                                width="1200" height="750" alt="Placeholder image for the Eventbrite Wallet case study"
-                                loading="lazy" decoding="async">
-                        </a>
-                        <div class="project-card-body">
-                            <p class="project-meta">Academic / 2025</p>
-                            <h2><a href="/project-2.html">Eventbrite Wallet</a></h2>
-                            <p>Reducing queues and unlocking new in-event revenue through a wallet-based purchase and
-                                redemption experience.</p>
-                            <a href="/project-2.html" class="text-link">Read case study</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <a href="/project-3.html" class="project-cover" aria-label="Open Project Three">
-                            <img src="assets/images/projects/wise/1.jpg"
-                                srcset="assets/images/projects/wise/1.jpg, assets/images/projects/wise/1.jpg" width="1200"
-                                height="750" alt="Placeholder image for the Wise Quests case study" loading="lazy"
-                                decoding="async">
-                        </a>
-                        <div class="project-card-body">
-                            <p class="project-meta">Academic / 2026</p>
-                            <h2><a href="/project-3.html">Wise Young Explorer</a></h2>
-                            <p>Helping young people gain financial independence while giving parents confidence, guidance and control.</p>
-                            <a href="/project-3.html" class="text-link">Read case study</a>
-                        </div>
-                    </article>
-                    <article class="project-card">
-                        <a href="/project-4.html" class="project-cover" aria-label="Open Project Four">
-                            <img src="assets\images\projects\1.jpg "
-                                srcset="/assets/images/projects/project-four-hero@1x.jpg 1x, /assets/images/projects/project-four-hero@2x.jpg 2x"
-                                width="1200" height="750" alt="Placeholder image for the fourth project case study"
-                                loading="lazy" decoding="async">
-                        </a>
-                        <div class="project-card-body">
-                            <p class="project-meta">Prototype / 2025</p>
-                            <h2><a href="/project-4.html">Project Four</a></h2>
-                            <p>Brief description for your fourth project. Highlight the format, tools, and main learning
-                                outcome.</p>
-                            <a href="/project-4.html" class="text-link">Read case study</a>
-                        </div>
-                    </article>
+                    </div>
                 </div>
-            </div>
-        </section>
-    </main>
+            </section>
 
-    <!--@import "_footer.kit"-->
+            <section id="case-studies" class="react-portfolio-cases" aria-label="Case studies">
+                <div class="react-container">
+                    <div class="react-portfolio-grid">
+                        <a class="react-study-card" href="/project-1.html" target="_blank" rel="noopener">
+                            <span class="react-study-image">
+                                <img src="/src_portfolio/assets/5fcd92c27a6238cbc86a4373e22c4b419868fce7.png" width="1200" height="800" alt="Ita&uacute; assisted sales channel project preview" loading="eager" decoding="async">
+                            </span>
+                            <span class="react-study-content">
+                                <span class="react-study-meta">Professional / 2024</span>
+                                <span class="react-study-title">Ita&uacute; - Assisted Sales Channel</span>
+                                <span class="react-study-description">Simplifying a sensitive financial journey inside retail stores, balancing operational speed, customer clarity and compliance.</span>
+                                <span class="react-study-link">Read case study <span aria-hidden="true">&rsaquo;</span></span>
+                            </span>
+                        </a>
+
+                        <a class="react-study-card" href="/project-2.html" target="_blank" rel="noopener">
+                            <span class="react-study-image">
+                                <img src="/src_portfolio/assets/f1e3a31399e3b7fe537cabf7652dad207d134fa2.png" width="1200" height="800" alt="Eventbrite Wallet project preview" loading="lazy" decoding="async">
+                            </span>
+                            <span class="react-study-content">
+                                <span class="react-study-meta">Academic / 2025</span>
+                                <span class="react-study-title">Eventbrite Wallet</span>
+                                <span class="react-study-description">Reducing queues and unlocking new in-event revenue through a wallet-based purchase and redemption experience.</span>
+                                <span class="react-study-link">Read case study <span aria-hidden="true">&rsaquo;</span></span>
+                            </span>
+                        </a>
+
+                        <a class="react-study-card" href="/project-3.html" target="_blank" rel="noopener">
+                            <span class="react-study-image">
+                                <img src="/src_portfolio/assets/98999766636e61d4fa82fc894821d35302ca022b.png" width="1200" height="800" alt="Wise Young Explorer project preview" loading="lazy" decoding="async">
+                            </span>
+                            <span class="react-study-content">
+                                <span class="react-study-meta">Academic / 2025</span>
+                                <span class="react-study-title">Wise Young Explorer</span>
+                                <span class="react-study-description">Helping young people gain financial independence while giving parents confidence, guidance and control.</span>
+                                <span class="react-study-link">Read case study <span aria-hidden="true">&rsaquo;</span></span>
+                            </span>
+                        </a>
+
+                        <article class="react-study-card">
+                            <span class="react-study-image">
+                                <img src="/src_portfolio/assets/4f197d84c2b988322fffc5481cee43ea9ac200f8.png" width="1200" height="800" alt="Redesign Website FBAUL project preview" loading="lazy" decoding="async">
+                            </span>
+                            <span class="react-study-content">
+                                <span class="react-study-meta">Academic / 2025</span>
+                                <span class="react-study-title">Redesign - Website FBAUL</span>
+                                <span class="react-study-description">Simplifying a sensitive financial journey inside retail stores, balancing operational speed, customer clarity and compliance.</span>
+                                <span class="react-study-link">Read case study <span aria-hidden="true">&rsaquo;</span></span>
+                            </span>
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer class="react-footer">
+            <div class="react-container">
+                <div class="react-footer-main">
+                    <h2>Pedro Porto Borges</h2>
+                    <nav aria-label="Social links">
+                        <ul>
+                            <li><a href="mailto:contact@example.com">Email</a></li>
+                            <li><a href="https://github.com/pedro-porto-borges/" target="_blank" rel="noopener">GitHub</a></li>
+                            <li><a href="https://www.linkedin.com/in/pedro-porto-borges-789371208/" target="_blank" rel="noopener">LinkedIn</a></li>
+                        </ul>
+                    </nav>
+                </div>
+                <p>&copy; 2026 Pedro Porto Borges. All rights reserved.</p>
+            </div>
+        </footer>
+    </div>
 </body>
 
 </html>
