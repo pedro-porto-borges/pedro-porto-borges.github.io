@@ -3720,10 +3720,6 @@ button:focus-visible {
     border-color: #000000;
 }
 
-.react-portfolio-page .react-container {
-    padding: 0 24px;
-}
-
 .react-portfolio-menu {
     align-items: center;
     display: flex;
@@ -4022,10 +4018,6 @@ button:focus-visible {
         font-size: 28px;
         line-height: 1.4;
     }
-
-    .react-portfolio-page .react-container {
-        padding: 0 32px;
-    }
 }
 
 @media (max-width: 768px) {
@@ -4200,10 +4192,6 @@ button:focus-visible {
     .react-home-project-title {
         font-size: 32px;
         line-height: 40px;
-    }
-
-    .react-portfolio-page .react-container {
-        padding: 0 48px;
     }
 
     .react-portfolio-page .react-site-title {
