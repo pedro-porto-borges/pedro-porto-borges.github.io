@@ -16,16 +16,19 @@
 
 <body class="react-home-page">
     <div class="react-page-shell">
-        
+
 <header class="react-portfolio-header">
     <div class="react-container">
         <nav class="react-portfolio-nav" aria-label="Primary navigation">
             <a class="react-site-title" href="/index.html">Pedro Porto Borges</a>
-            <div class="react-portfolio-menu">
+
+            <div class="react-portfolio-menu" id="react-mobile-menu">
                 <a href="/portfolio.html">Case Studies</a>
                 <a href="/contact.html">About me</a>
             </div>
-            <button class="react-mobile-menu-button" type="button" aria-label="Menu">
+
+            <button class="react-mobile-menu-button" type="button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="react-mobile-menu">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -114,6 +117,8 @@
         </div>
     </div>
 </footer>
+
+<script src="/assets/js/main.min.js"></script>
 
     </div>
 </body>

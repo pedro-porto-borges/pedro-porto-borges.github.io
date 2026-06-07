@@ -282,35 +282,6 @@
     </main>
 
 <!--@import "_footer.kit"-->
-
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const sidebarToggle = document.getElementById('sidebarToggle');
-            const youngShell = document.getElementById('youngShell');
-
-            if (!sidebarToggle || !youngShell) return;
-
-            const setSidebarState = (isHidden) => {
-                youngShell.classList.toggle('sidebar-hidden', isHidden);
-
-                sidebarToggle.setAttribute('aria-expanded', String(!isHidden));
-                sidebarToggle.setAttribute(
-                    'title',
-                    isHidden ? 'Open sidebar' : 'Close sidebar'
-                );
-
-                localStorage.setItem('sidebarHidden', String(isHidden));
-            };
-
-            const savedState = localStorage.getItem('sidebarHidden') === 'true';
-            setSidebarState(savedState);
-
-            sidebarToggle.addEventListener('click', () => {
-                const isHidden = youngShell.classList.contains('sidebar-hidden');
-                setSidebarState(!isHidden);
-            });
-        });
-    </script>
 </body>
 
 </html>

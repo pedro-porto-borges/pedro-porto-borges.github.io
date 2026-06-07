@@ -338,43 +338,6 @@
     </main>
 
     <!--@import "_footer.kit"-->
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            const shell = document.getElementById('movaShell');
-            const toggle = document.getElementById('movaSidebarToggle');
-            const sidebar = document.getElementById('movaSidebar');
-            const overlay = document.getElementById('movaSidebarOverlay');
-
-            if (!shell || !toggle || !sidebar || !overlay) return;
-
-            const setSidebarOpen = function (isOpen) {
-                shell.classList.toggle('sidebar-open', isOpen);
-                toggle.setAttribute('aria-expanded', String(isOpen));
-                toggle.setAttribute('aria-label', isOpen ? 'Close sidebar' : 'Open sidebar');
-            };
-
-            toggle.addEventListener('click', function (event) {
-                event.stopPropagation();
-                setSidebarOpen(!shell.classList.contains('sidebar-open'));
-            });
-
-            overlay.addEventListener('click', function () {
-                setSidebarOpen(false);
-            });
-
-            sidebar.addEventListener('click', function (event) {
-                if (event.target.closest('a')) {
-                    setSidebarOpen(false);
-                }
-            });
-
-            document.addEventListener('keydown', function (event) {
-                if (event.key === 'Escape') {
-                    setSidebarOpen(false);
-                }
-            });
-        });
-    </script>
 </body>
 
 </html>
