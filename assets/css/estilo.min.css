@@ -1549,6 +1549,10 @@ button:focus-visible {
     font-size: clamp(2.6rem, 7vw, 5.6rem)
 }
 
+.young-section-heading.young-compact h2 {
+    font-size: clamp(2rem, 5vw, 4.35rem)
+}
+
 .young-role-grid p,
 .young-story-copy p:not(.young-section-label) {
     color: var(--yc-muted);
@@ -1565,6 +1569,13 @@ button:focus-visible {
 
 .young-section-heading.young-compact {
     max-width: 860px
+}
+
+.young-section-heading.young-compact h2 {
+    font-weight: 600;
+    font-size: clamp(1.8rem, 5vw, 3.5rem);
+    text-transform: none;
+    letter-spacing: 0
 }
 
 .young-lead-copy {
@@ -4190,11 +4201,6 @@ button:focus-visible {
     }
 
     .react-home-project-title {
-        font-size: 32px;
-        line-height: 40px;
-    }
-
-    .react-portfolio-page .react-site-title {
         font-size: 32px;
         line-height: 40px;
     }
