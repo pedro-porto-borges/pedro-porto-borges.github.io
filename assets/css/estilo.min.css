@@ -1205,25 +1205,10 @@ button:focus-visible {
     transition: transform 300ms ease, -webkit-transform 300ms ease
 }
 
-.young-shell.sidebar-hidden .young-sidebar:hover,
-.young-shell.sidebar-hidden:hover .young-sidebar {
-    -webkit-transform: translateX(0);
-    transform: translateX(0)
-}
-
 .young-shell.sidebar-hidden .young-main {
-    width: 100%
-}
-
-.young-shell.sidebar-hidden:before {
-    content: '';
-    position: fixed;
-    left: 0;
-    top: 80px;
-    width: 20px;
-    height: calc(100vh - 80px);
-    cursor: pointer;
-    z-index: 100
+    width: min(1120px, 100%);
+    margin: 0 auto;
+    min-width: 0
 }
 
 .young-sidebar {
@@ -2165,20 +2150,6 @@ button:focus-visible {
     border-right-color: transparent;
 }
 
-/* Remove the old hover-to-open behaviour */
-.young-shell.sidebar-hidden .young-sidebar:hover,
-.young-shell.sidebar-hidden:hover .young-sidebar {
-    opacity: 0;
-    transform: translateX(-24px);
-    pointer-events: none;
-}
-
-/* Remove the old invisible hover strip */
-.young-shell.sidebar-hidden::before {
-    content: none;
-    display: none;
-}
-
 /* Main content keeps its proportions and re-centres inside the available space */
 .young-main {
     min-width: 0;
@@ -2312,13 +2283,6 @@ button:focus-visible {
         padding-left: var(--yc-space-xl);
         padding-right: var(--yc-space-xl);
         border-right: 1px solid transparent;
-    }
-
-    .young-shell.sidebar-hidden .young-sidebar:hover,
-    .young-shell.sidebar-hidden:hover .young-sidebar {
-        opacity: 0;
-        transform: translateX(-100%);
-        pointer-events: none;
     }
 
     .young-case .sidebar-toggle {
@@ -2553,7 +2517,7 @@ button:focus-visible {
     transition: transform 300ms ease;
 }
 
-.eventbrite-case .eventbrite-shell.sidebar-open .eventbrite-sidebar {
+.eventbrite-case .eventbrite-shell:not(.sidebar-hidden) .eventbrite-sidebar {
     transform: translateX(0);
 }
 
@@ -2588,21 +2552,6 @@ button:focus-visible {
     transform: translateX(4px);
 }
 
-.eventbrite-case .eventbrite-sidebar-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 9997;
-    background: rgba(0, 0, 0, 0.48);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 300ms ease;
-}
-
-.eventbrite-case .eventbrite-shell.sidebar-open .eventbrite-sidebar-overlay {
-    opacity: 1;
-    pointer-events: auto;
-}
-
 .eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle {
     position: fixed;
     top: 96px;
@@ -2624,7 +2573,7 @@ button:focus-visible {
     transition: left 300ms ease, background 200ms ease, transform 200ms ease;
 }
 
-.eventbrite-case .eventbrite-shell.sidebar-open .eventbrite-sidebar-toggle.sidebar-toggle {
+.eventbrite-case .eventbrite-shell:not(.sidebar-hidden) .eventbrite-sidebar-toggle.sidebar-toggle {
     left: calc(min(320px, 86vw) - 22px);
 }
 
@@ -2654,11 +2603,19 @@ button:focus-visible {
     display: none !important;
 }
 
-.eventbrite-case .eventbrite-shell.sidebar-open .eventbrite-toggle-open {
+.eventbrite-case .eventbrite-shell.sidebar-hidden .eventbrite-toggle-open {
+    display: block !important;
+}
+
+.eventbrite-case .eventbrite-shell.sidebar-hidden .eventbrite-toggle-close {
     display: none !important;
 }
 
-.eventbrite-case .eventbrite-shell.sidebar-open .eventbrite-toggle-close {
+.eventbrite-case .eventbrite-shell:not(.sidebar-hidden) .eventbrite-toggle-open {
+    display: none !important;
+}
+
+.eventbrite-case .eventbrite-shell:not(.sidebar-hidden) .eventbrite-toggle-close {
     display: block !important;
 }
 
@@ -2679,7 +2636,6 @@ button:focus-visible {
 @media (prefers-reduced-motion: reduce) {
 
     .eventbrite-case .eventbrite-sidebar,
-    .eventbrite-case .eventbrite-sidebar-overlay,
     .eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle {
         transition: none;
     }
@@ -2705,8 +2661,8 @@ button:focus-visible {
 .mova-case .mova-shell {
     display: -ms-grid;
     display: grid;
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+    -ms-grid-columns: 280px minmax(0, 1fr);
+    grid-template-columns: 280px minmax(0, 1fr);
     min-height: calc(100vh - 80px);
     -webkit-transition: grid-template-columns 300ms ease;
     transition: grid-template-columns 300ms ease;
@@ -2718,20 +2674,20 @@ button:focus-visible {
 }
 
 /* Sidebar aberta: reserva espaço real no grid */
-.mova-case .mova-shell.sidebar-open {
+.mova-case .mova-shell:not(.sidebar-hidden) {
     -ms-grid-columns: 280px minmax(0, 1fr);
     grid-template-columns: 280px minmax(0, 1fr);
     padding-left: 0;
 }
 
 /* Sidebar fechada: conteúdo ocupa 100% */
-.mova-case .mova-shell:not(.sidebar-open) {
-    -ms-grid-columns: 1fr;
-    grid-template-columns: 1fr;
+.mova-case .mova-shell.sidebar-hidden {
+    -ms-grid-columns: 0 minmax(0, 1fr);
+    grid-template-columns: 0 minmax(0, 1fr);
 }
 
 /* Estado base da sidebar quando fechada */
-.mova-case .mova-shell:not(.sidebar-open) .mova-sidebar {
+.mova-case .mova-shell.sidebar-hidden .mova-sidebar {
     position: fixed;
     left: 0;
     top: 80px;
@@ -2747,38 +2703,21 @@ button:focus-visible {
 }
 
 /* Preview da sidebar quando fechada, igual à lógica da young */
-.mova-case .mova-shell:not(.sidebar-open) .mova-sidebar:hover,
-.mova-case .mova-shell:not(.sidebar-open):hover .mova-sidebar {
-    -webkit-transform: translateX(0);
-    transform: translateX(0);
-}
-
 /* Área sensível na lateral esquerda quando a sidebar está fechada */
-.mova-case .mova-shell:not(.sidebar-open)::before {
-    content: '';
-    position: fixed;
-    left: 0;
-    top: 80px;
-    width: 20px;
-    height: calc(100vh - 80px);
-    cursor: pointer;
-    z-index: 100;
-}
-
 /* Main ocupa tudo quando a sidebar está fechada */
-.mova-case .mova-shell:not(.sidebar-open) .mova-main {
+.mova-case .mova-shell.sidebar-hidden .mova-main {
     width: 100%;
     min-width: 0;
 }
 
 /* Main ajusta ao espaço restante quando a sidebar está aberta */
-.mova-case .mova-shell.sidebar-open .mova-main {
+.mova-case .mova-shell:not(.sidebar-hidden) .mova-main {
     width: 100%;
     min-width: 0;
 }
 
 /* Sidebar aberta dentro do grid */
-.mova-case .mova-shell.sidebar-open .mova-sidebar {
+.mova-case .mova-shell:not(.sidebar-hidden) .mova-sidebar {
     position: sticky;
     top: 80px;
     width: 280px;
@@ -2838,14 +2777,14 @@ button:focus-visible {
 /* Responsivo */
 @media (max-width: 980px) {
     .mova-case .mova-shell,
-    .mova-case .mova-shell.sidebar-open,
-    .mova-case .mova-shell:not(.sidebar-open) {
+    .mova-case .mova-shell:not(.sidebar-hidden),
+    .mova-case .mova-shell.sidebar-hidden {
         -ms-grid-columns: 1fr;
         grid-template-columns: 1fr;
     }
 
-    .mova-case .mova-shell.sidebar-open .mova-sidebar,
-    .mova-case .mova-shell:not(.sidebar-open) .mova-sidebar {
+    .mova-case .mova-shell:not(.sidebar-hidden) .mova-sidebar,
+    .mova-case .mova-shell.sidebar-hidden .mova-sidebar {
         position: fixed;
         left: 0;
         top: 80px;
@@ -2854,12 +2793,12 @@ button:focus-visible {
         z-index: 999;
     }
 
-    .mova-case .mova-shell:not(.sidebar-open) .mova-sidebar {
+    .mova-case .mova-shell.sidebar-hidden .mova-sidebar {
         -webkit-transform: translateX(-100%);
         transform: translateX(-100%);
     }
 
-    .mova-case .mova-shell.sidebar-open .mova-sidebar {
+    .mova-case .mova-shell:not(.sidebar-hidden) .mova-sidebar {
         -webkit-transform: translateX(0);
         transform: translateX(0);
     }
@@ -3116,7 +3055,7 @@ button:focus-visible {
     transition: transform 300ms ease;
 }
 
-.mova-case .mova-shell.sidebar-open .mova-sidebar {
+.mova-case .mova-shell:not(.sidebar-hidden) .mova-sidebar {
     transform: translateX(0);
 }
 
@@ -3151,21 +3090,6 @@ button:focus-visible {
     transform: translateX(4px);
 }
 
-.mova-case .mova-sidebar-overlay {
-    position: fixed;
-    inset: 0;
-    z-index: 9997;
-    background: rgba(23, 23, 23, 0.42);
-    opacity: 0;
-    pointer-events: none;
-    transition: opacity 300ms ease;
-}
-
-.mova-case .mova-shell.sidebar-open .mova-sidebar-overlay {
-    opacity: 1;
-    pointer-events: auto;
-}
-
 .mova-case .mova-sidebar-toggle.sidebar-toggle {
     position: fixed;
     top: 96px;
@@ -3187,7 +3111,7 @@ button:focus-visible {
     transition: left 300ms ease, background 200ms ease, color 200ms ease, transform 200ms ease;
 }
 
-.mova-case .mova-shell.sidebar-open .mova-sidebar-toggle.sidebar-toggle {
+.mova-case .mova-shell:not(.sidebar-hidden) .mova-sidebar-toggle.sidebar-toggle {
     left: calc(min(320px, 86vw) - 22px);
 }
 
@@ -3217,16 +3141,24 @@ button:focus-visible {
     display: none !important;
 }
 
-.mova-case .mova-shell.sidebar-open .mova-toggle-open {
+.mova-case .mova-shell.sidebar-hidden .mova-toggle-open {
+    display: block !important;
+}
+
+.mova-case .mova-shell.sidebar-hidden .mova-toggle-close {
     display: none !important;
 }
 
-.mova-case .mova-shell.sidebar-open .mova-toggle-close {
+.mova-case .mova-shell:not(.sidebar-hidden) .mova-toggle-open {
+    display: none !important;
+}
+
+.mova-case .mova-shell:not(.sidebar-hidden) .mova-toggle-close {
     display: block !important;
 }
 
 @media (max-width: 1080px) {
-    .mova-case .mova-shell.sidebar-open {
+    .mova-case .mova-shell:not(.sidebar-hidden) {
         padding-left: 0;
     }
 }
@@ -3283,7 +3215,6 @@ button:focus-visible {
 
     .mova-case .mova-shell,
     .mova-case .mova-sidebar,
-    .mova-case .mova-sidebar-overlay,
     .mova-case .mova-sidebar-toggle.sidebar-toggle {
         transition: none;
     }
@@ -3308,8 +3239,8 @@ button:focus-visible {
     width: min(1120px, 100%);
 }
 
-.mova-case .case-sidebar-shell.sidebar-open,
-.eventbrite-case .case-sidebar-shell.sidebar-open {
+.mova-case .case-sidebar-shell:not(.sidebar-hidden),
+.eventbrite-case .case-sidebar-shell:not(.sidebar-hidden) {
     padding-left: 0;
 }
 
@@ -3337,9 +3268,8 @@ button:focus-visible {
     transition: opacity 220ms ease, transform 300ms ease, padding 300ms ease, border-color 300ms ease;
 }
 
-.mova-case .case-sidebar-shell>.mova-sidebar.sidebar,
-.eventbrite-case .case-sidebar-shell>.eventbrite-sidebar.case-sidebar,
-.eventbrite-case .case-sidebar-shell>.eventbrite-sidebar.sidebar {
+.mova-case .case-sidebar-shell>.mova-sidebar.case-sidebar,
+.eventbrite-case .case-sidebar-shell>.eventbrite-sidebar.case-sidebar {
     position: sticky;
     top: 80px;
     left: auto;
@@ -3382,9 +3312,9 @@ button:focus-visible {
     transition: left 300ms ease, background 200ms ease, color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
 }
 
-.mova-case .case-sidebar-shell.sidebar-open>.mova-sidebar-toggle.sidebar-toggle,
-.eventbrite-case .case-sidebar-shell.sidebar-open>.eventbrite-sidebar-toggle.sidebar-toggle,
-.project-four-case .case-sidebar-shell.sidebar-open>.project-four-sidebar-toggle.sidebar-toggle {
+.mova-case .case-sidebar-shell:not(.sidebar-hidden)>.mova-sidebar-toggle.sidebar-toggle,
+.eventbrite-case .case-sidebar-shell:not(.sidebar-hidden)>.eventbrite-sidebar-toggle.sidebar-toggle,
+.project-four-case .case-sidebar-shell:not(.sidebar-hidden)>.project-four-sidebar-toggle.sidebar-toggle {
     left: calc(var(--case-sidebar-width) - 18px);
 }
 
@@ -3439,8 +3369,8 @@ button:focus-visible {
 
 @media (min-width: 981px) {
 
-    .mova-case .mova-shell:not(.case-sidebar-shell),
-    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell) {
+    .mova-case .mova-shell,
+    .eventbrite-case .eventbrite-shell {
         --case-sidebar-width: 280px;
         display: grid;
         grid-template-columns: 0 minmax(0, 1fr);
@@ -3450,22 +3380,22 @@ button:focus-visible {
         transition: grid-template-columns 300ms ease;
     }
 
-    .mova-case .mova-shell:not(.case-sidebar-shell) {
+    .mova-case .mova-shell {
         width: min(1280px, 100%);
     }
 
-    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell) {
+    .eventbrite-case .eventbrite-shell {
         width: min(1120px, 100%);
     }
 
-    .mova-case .mova-shell:not(.case-sidebar-shell).sidebar-open,
-    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell).sidebar-open {
+    .mova-case .mova-shell:not(.sidebar-hidden),
+    .eventbrite-case .eventbrite-shell:not(.sidebar-hidden) {
         grid-template-columns: var(--case-sidebar-width) minmax(0, 1fr);
         padding-left: 0;
     }
 
-    .mova-case .mova-shell:not(.case-sidebar-shell) .mova-sidebar,
-    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell) .eventbrite-sidebar {
+    .mova-case .mova-shell .mova-sidebar,
+    .eventbrite-case .eventbrite-shell .eventbrite-sidebar {
         grid-column: 1;
         grid-row: 1;
         position: sticky;
@@ -3486,8 +3416,8 @@ button:focus-visible {
         transition: opacity 220ms ease, transform 300ms ease, padding 300ms ease, border-color 300ms ease;
     }
 
-    .mova-case .mova-shell:not(.case-sidebar-shell).sidebar-open .mova-sidebar,
-    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell).sidebar-open .eventbrite-sidebar {
+    .mova-case .mova-shell:not(.sidebar-hidden) .mova-sidebar,
+    .eventbrite-case .eventbrite-shell:not(.sidebar-hidden) .eventbrite-sidebar {
         opacity: 1;
         transform: translateX(0);
         pointer-events: auto;
@@ -3495,8 +3425,8 @@ button:focus-visible {
         border-right-color: rgba(255, 255, 255, 0.16);
     }
 
-    .mova-case .mova-shell:not(.case-sidebar-shell) .mova-case-study,
-    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell) .eventbrite-case-study {
+    .mova-case .mova-shell .mova-case-study,
+    .eventbrite-case .eventbrite-shell .eventbrite-case-study {
         grid-column: 2;
         grid-row: 1;
         min-width: 0;
@@ -3504,14 +3434,8 @@ button:focus-visible {
         margin: 0 auto;
     }
 
-    .mova-case .mova-shell:not(.case-sidebar-shell) .mova-sidebar-overlay,
-    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell) .eventbrite-sidebar-overlay {
-        display: none;
-        pointer-events: none;
-    }
-
-    .mova-case .mova-shell:not(.case-sidebar-shell).sidebar-open .mova-sidebar-toggle.sidebar-toggle,
-    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell).sidebar-open .eventbrite-sidebar-toggle.sidebar-toggle {
+    .mova-case .mova-shell:not(.sidebar-hidden) .mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-case .eventbrite-shell:not(.sidebar-hidden) .eventbrite-sidebar-toggle.sidebar-toggle {
         left: calc(var(--case-sidebar-width) - 18px);
     }
 }
@@ -3556,9 +3480,9 @@ button:focus-visible {
         grid-column: 1;
     }
 
-    .mova-case .case-sidebar-shell.sidebar-open>.mova-sidebar-toggle.sidebar-toggle,
-    .eventbrite-case .case-sidebar-shell.sidebar-open>.eventbrite-sidebar-toggle.sidebar-toggle,
-    .project-four-case .case-sidebar-shell.sidebar-open>.project-four-sidebar-toggle.sidebar-toggle,
+    .mova-case .case-sidebar-shell:not(.sidebar-hidden)>.mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-case .case-sidebar-shell:not(.sidebar-hidden)>.eventbrite-sidebar-toggle.sidebar-toggle,
+    .project-four-case .case-sidebar-shell:not(.sidebar-hidden)>.project-four-sidebar-toggle.sidebar-toggle,
     .project-case .case-sidebar-shell>.sidebar-toggle,
     .project-four-case .case-sidebar-shell>.sidebar-toggle {
         left: calc(var(--case-sidebar-width) - 18px);
@@ -4775,5 +4699,482 @@ button:focus-visible {
 
     .react-home-project-card:hover {
         transform: none;
+    }
+}
+
+/* =========================================================
+   STANDARD CASE LAYOUT BASED ON YOUNG
+   Sidebar + Main Content
+========================================================= */
+@media (min-width: 981px) {
+
+    .young-shell,
+    .mova-case .mova-shell,
+    .eventbrite-case .eventbrite-shell,
+    .project-four-case .case-sidebar-shell {
+        display: grid;
+        grid-template-columns: 280px minmax(0, 1fr);
+        min-height: calc(100vh - 80px);
+        width: min(1280px, 100%);
+        margin: 0 auto;
+    }
+
+    .young-shell.sidebar-hidden,
+    .mova-case .mova-shell.sidebar-hidden,
+    .eventbrite-case .eventbrite-shell.sidebar-hidden,
+    .project-four-case .case-sidebar-shell.sidebar-hidden {
+        grid-template-columns: 0 minmax(0, 1fr);
+    }
+
+    .young-shell>.young-sidebar,
+    .mova-case .mova-shell>.mova-sidebar.case-sidebar,
+    .eventbrite-case .eventbrite-shell>.eventbrite-sidebar.case-sidebar,
+    .project-four-case .case-sidebar-shell>.case-sidebar {
+        grid-column: 1;
+        grid-row: 1;
+    }
+
+    .young-shell>.young-main,
+    .mova-case .mova-shell>.mova-case-study,
+    .mova-case .mova-shell>.case-sidebar-main,
+    .eventbrite-case .eventbrite-shell>.eventbrite-case-study,
+    .eventbrite-case .eventbrite-shell>.case-sidebar-main,
+    .project-four-case .case-sidebar-shell>.case-sidebar-main {
+        grid-column: 2;
+        grid-row: 1;
+        width: min(1120px, 100%);
+        margin: 0 auto;
+        min-width: 0;
+    }
+}
+
+@media (min-width: 981px) {
+
+    .mova-case .mova-shell>.mova-sidebar.case-sidebar,
+    .mova-case .mova-shell.sidebar-hidden>.mova-sidebar.case-sidebar,
+    .mova-case .mova-shell:not(.sidebar-hidden)>.mova-sidebar.case-sidebar {
+        position: sticky;
+        top: 80px;
+        left: auto;
+        z-index: auto;
+        width: 100%;
+        min-width: 0;
+        height: calc(100vh - 80px);
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    .mova-case .mova-shell.sidebar-hidden>.mova-sidebar.case-sidebar {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .mova-case .mova-shell:not(.sidebar-hidden)>.mova-sidebar.case-sidebar {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+}
+
+@media (min-width: 981px) {
+
+    .eventbrite-case .eventbrite-shell {
+        width: min(calc(280px + 1120px), 100%);
+    }
+
+    .eventbrite-case .eventbrite-shell>.eventbrite-case-study,
+    .eventbrite-case .eventbrite-shell>.case-sidebar-main {
+        width: min(1120px, 100%);
+        margin: 0 auto;
+        min-width: 0;
+    }
+
+    .eventbrite-case .eventbrite-shell>.eventbrite-sidebar.case-sidebar,
+    .eventbrite-case .eventbrite-shell.sidebar-hidden>.eventbrite-sidebar.case-sidebar,
+    .eventbrite-case .eventbrite-shell:not(.sidebar-hidden)>.eventbrite-sidebar.case-sidebar {
+        grid-column: 1;
+        grid-row: 1;
+        position: sticky;
+        top: 80px;
+        left: auto;
+        z-index: auto;
+        width: 100%;
+        min-width: 0;
+        height: calc(100vh - 80px);
+        -webkit-transform: none;
+        transform: none;
+    }
+
+    .eventbrite-case .eventbrite-shell.sidebar-hidden>.eventbrite-sidebar.case-sidebar {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .eventbrite-case .eventbrite-shell:not(.sidebar-hidden)>.eventbrite-sidebar.case-sidebar {
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+}
+
+.mova-case,
+.eventbrite-case {
+    padding: 0;
+}
+
+@media (min-width: 981px) {
+
+    .project-four-case .case-sidebar-shell {
+        --case-sidebar-width: 280px;
+        display: grid;
+        grid-template-columns: var(--case-sidebar-width) minmax(0, 1fr);
+        min-height: calc(100vh - 80px);
+        width: min(calc(280px + 1120px), 100%);
+        margin: 0 auto;
+    }
+
+    .project-four-case .case-sidebar-shell.sidebar-hidden {
+        grid-template-columns: 0 minmax(0, 1fr);
+    }
+
+    .project-four-case .case-sidebar-shell>.case-sidebar {
+        grid-column: 1;
+        grid-row: 1;
+        position: sticky;
+        top: 80px;
+        left: auto;
+        z-index: auto;
+        width: 100%;
+        min-width: 0;
+        height: calc(100vh - 80px);
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+
+    .project-four-case .case-sidebar-shell.sidebar-hidden>.case-sidebar {
+        opacity: 0;
+        transform: translateX(-24px);
+        pointer-events: none;
+    }
+
+    .project-four-case .case-sidebar-shell>.case-sidebar-main {
+        grid-column: 2;
+        grid-row: 1;
+        width: min(1120px, 100%);
+        margin: 0 auto;
+        min-width: 0;
+    }
+}
+
+@media (max-width: 980px) {
+
+    .project-four-case .case-sidebar-shell {
+        --case-sidebar-width: min(82vw, 320px);
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+    }
+
+    .project-four-case .case-sidebar-shell>.case-sidebar {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        z-index: 9998;
+        width: var(--case-sidebar-width);
+        height: calc(100vh - 80px);
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+
+    .project-four-case .case-sidebar-shell.sidebar-hidden>.case-sidebar {
+        opacity: 0;
+        transform: translateX(-100%);
+        pointer-events: none;
+    }
+
+    .project-four-case .case-sidebar-shell>.case-sidebar-main {
+        grid-column: 1;
+        width: min(1120px, 100%);
+        margin: 0 auto;
+        min-width: 0;
+    }
+}
+
+/* Standard floating sidebar button alignment */
+.young-case .sidebar-toggle,
+.mova-case .mova-sidebar-toggle.sidebar-toggle,
+.eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle,
+.project-four-case .project-four-sidebar-toggle.sidebar-toggle {
+    position: fixed;
+    top: 96px;
+    left: calc(280px - 18px);
+    z-index: 9999;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    margin: 0;
+    transition: left 300ms ease, transform 180ms ease, background 180ms ease, box-shadow 180ms ease;
+}
+
+.young-shell.sidebar-hidden .sidebar-toggle,
+.mova-case .mova-shell.sidebar-hidden .mova-sidebar-toggle.sidebar-toggle,
+.eventbrite-case .eventbrite-shell.sidebar-hidden .eventbrite-sidebar-toggle.sidebar-toggle,
+.project-four-case .case-sidebar-shell.sidebar-hidden .project-four-sidebar-toggle.sidebar-toggle {
+    left: 24px;
+}
+
+.young-shell:not(.sidebar-hidden) .sidebar-toggle,
+.mova-case .mova-shell:not(.sidebar-hidden) .mova-sidebar-toggle.sidebar-toggle,
+.eventbrite-case .eventbrite-shell:not(.sidebar-hidden) .eventbrite-sidebar-toggle.sidebar-toggle,
+.project-four-case .case-sidebar-shell:not(.sidebar-hidden) .project-four-sidebar-toggle.sidebar-toggle {
+    left: calc(280px - 18px);
+}
+
+@media (max-width: 980px) {
+
+    .young-case .sidebar-toggle,
+    .mova-case .mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle,
+    .project-four-case .project-four-sidebar-toggle.sidebar-toggle,
+    .young-shell:not(.sidebar-hidden) .sidebar-toggle,
+    .mova-case .mova-shell:not(.sidebar-hidden) .mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-case .eventbrite-shell:not(.sidebar-hidden) .eventbrite-sidebar-toggle.sidebar-toggle,
+    .project-four-case .case-sidebar-shell:not(.sidebar-hidden) .project-four-sidebar-toggle.sidebar-toggle {
+        left: calc(min(82vw, 320px) - 18px);
+    }
+
+    .young-shell.sidebar-hidden .sidebar-toggle,
+    .mova-case .mova-shell.sidebar-hidden .mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-case .eventbrite-shell.sidebar-hidden .eventbrite-sidebar-toggle.sidebar-toggle,
+    .project-four-case .case-sidebar-shell.sidebar-hidden .project-four-sidebar-toggle.sidebar-toggle {
+        left: 24px;
+    }
+}
+
+@media (max-width: 620px) {
+
+    .young-case .sidebar-toggle,
+    .mova-case .mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle,
+    .project-four-case .project-four-sidebar-toggle.sidebar-toggle {
+        top: 92px;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+    }
+}
+
+@media (max-width: 980px) {
+
+    .young-shell,
+    .mova-case .mova-shell,
+    .eventbrite-case .eventbrite-shell,
+    .project-four-case .case-sidebar-shell {
+        --case-sidebar-width: min(82vw, 320px);
+        display: grid;
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+    }
+
+    .young-shell>.young-sidebar,
+    .mova-case .mova-shell>.mova-sidebar.case-sidebar,
+    .eventbrite-case .eventbrite-shell>.eventbrite-sidebar.case-sidebar,
+    .project-four-case .case-sidebar-shell>.case-sidebar {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        z-index: 9998;
+        width: var(--case-sidebar-width);
+        min-width: 0;
+        height: calc(100vh - 80px);
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+    }
+
+    .young-shell.sidebar-hidden>.young-sidebar,
+    .mova-case .mova-shell.sidebar-hidden>.mova-sidebar.case-sidebar,
+    .eventbrite-case .eventbrite-shell.sidebar-hidden>.eventbrite-sidebar.case-sidebar,
+    .project-four-case .case-sidebar-shell.sidebar-hidden>.case-sidebar {
+        opacity: 0;
+        transform: translateX(-100%);
+        pointer-events: none;
+    }
+
+    .young-shell>.young-main,
+    .mova-case .mova-shell>.mova-case-study,
+    .mova-case .mova-shell>.case-sidebar-main,
+    .eventbrite-case .eventbrite-shell>.eventbrite-case-study,
+    .eventbrite-case .eventbrite-shell>.case-sidebar-main,
+    .project-four-case .case-sidebar-shell>.case-sidebar-main {
+        grid-column: 1;
+        width: min(1120px, 100%);
+        margin: 0 auto;
+        min-width: 0;
+    }
+
+    .young-case .sidebar-toggle,
+    .mova-case .mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle,
+    .project-four-case .project-four-sidebar-toggle.sidebar-toggle {
+        position: fixed;
+        z-index: 9999;
+        left: calc(var(--case-sidebar-width) - 18px);
+    }
+
+    .young-shell.sidebar-hidden .sidebar-toggle,
+    .mova-case .mova-shell.sidebar-hidden .mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-case .eventbrite-shell.sidebar-hidden .eventbrite-sidebar-toggle.sidebar-toggle,
+    .project-four-case .case-sidebar-shell.sidebar-hidden .project-four-sidebar-toggle.sidebar-toggle {
+        left: 24px;
+    }
+}
+
+@media (min-width: 981px) {
+
+    .young-shell,
+    .mova-shell.case-sidebar-shell,
+    .eventbrite-shell.case-sidebar-shell,
+    .project-four-case .case-sidebar-shell {
+        display: grid;
+        grid-template-columns: 280px minmax(0, 1fr);
+        min-height: calc(100vh - 80px);
+    }
+
+    .young-shell.sidebar-hidden,
+    .mova-shell.case-sidebar-shell.sidebar-hidden,
+    .eventbrite-shell.case-sidebar-shell.sidebar-hidden,
+    .project-four-case .case-sidebar-shell.sidebar-hidden {
+        grid-template-columns: 0 minmax(0, 1fr);
+    }
+
+    .young-shell>.young-sidebar,
+    .mova-shell.case-sidebar-shell>.mova-sidebar.case-sidebar,
+    .eventbrite-shell.case-sidebar-shell>.eventbrite-sidebar.case-sidebar,
+    .project-four-case .case-sidebar-shell>.case-sidebar {
+        grid-column: 1;
+        grid-row: 1;
+        position: sticky;
+        top: 80px;
+        height: calc(100vh - 80px);
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .young-shell.sidebar-hidden>.young-sidebar,
+    .mova-shell.case-sidebar-shell.sidebar-hidden>.mova-sidebar.case-sidebar,
+    .eventbrite-shell.case-sidebar-shell.sidebar-hidden>.eventbrite-sidebar.case-sidebar,
+    .project-four-case .case-sidebar-shell.sidebar-hidden>.case-sidebar {
+        opacity: 0;
+        pointer-events: none;
+    }
+
+    .young-shell>.young-main,
+    .mova-shell.case-sidebar-shell>.mova-case-study,
+    .mova-shell.case-sidebar-shell>.case-sidebar-main,
+    .eventbrite-shell.case-sidebar-shell>.eventbrite-case-study,
+    .eventbrite-shell.case-sidebar-shell>.case-sidebar-main,
+    .project-four-case .case-sidebar-shell>.case-sidebar-main {
+        grid-column: 2;
+        grid-row: 1;
+        width: min(1120px, 100%);
+        margin: 0 auto;
+        min-width: 0;
+    }
+}
+
+.young-case .sidebar-toggle,
+.mova-case .mova-sidebar-toggle.sidebar-toggle,
+.eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle,
+.project-four-case .project-four-sidebar-toggle.sidebar-toggle {
+    position: fixed;
+    top: 96px;
+    left: calc(280px - 18px);
+    z-index: 9999;
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    margin: 0;
+}
+
+.young-shell.sidebar-hidden .sidebar-toggle,
+.mova-shell.case-sidebar-shell.sidebar-hidden .mova-sidebar-toggle.sidebar-toggle,
+.eventbrite-shell.case-sidebar-shell.sidebar-hidden .eventbrite-sidebar-toggle.sidebar-toggle,
+.project-four-case .case-sidebar-shell.sidebar-hidden .project-four-sidebar-toggle.sidebar-toggle {
+    left: 24px;
+}
+
+.young-shell:not(.sidebar-hidden) .sidebar-toggle,
+.mova-shell.case-sidebar-shell:not(.sidebar-hidden) .mova-sidebar-toggle.sidebar-toggle,
+.eventbrite-shell.case-sidebar-shell:not(.sidebar-hidden) .eventbrite-sidebar-toggle.sidebar-toggle,
+.project-four-case .case-sidebar-shell:not(.sidebar-hidden) .project-four-sidebar-toggle.sidebar-toggle {
+    left: calc(280px - 18px);
+}
+
+.young-case .sidebar-toggle span,
+.young-case .sidebar-toggle .sidebar-toggle-icon,
+.mova-case .mova-sidebar-toggle.sidebar-toggle span,
+.mova-case .mova-sidebar-toggle.sidebar-toggle .sidebar-toggle-icon,
+.eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle span,
+.eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle .sidebar-toggle-icon,
+.project-four-case .project-four-sidebar-toggle.sidebar-toggle span,
+.project-four-case .project-four-sidebar-toggle.sidebar-toggle .sidebar-toggle-icon {
+    width: auto;
+    height: auto;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border-radius: 0;
+    transition: none;
+}
+
+.young-case .sidebar-toggle:hover span,
+.mova-case .mova-sidebar-toggle.sidebar-toggle:hover span,
+.eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle:hover span,
+.project-four-case .project-four-sidebar-toggle.sidebar-toggle:hover span {
+    background: transparent;
+}
+
+.young-case .sidebar-toggle svg,
+.mova-case .mova-sidebar-toggle.sidebar-toggle svg,
+.eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle svg,
+.project-four-case .project-four-sidebar-toggle.sidebar-toggle svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media (max-width: 980px) {
+
+    .young-case .sidebar-toggle,
+    .mova-case .mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle,
+    .project-four-case .project-four-sidebar-toggle.sidebar-toggle,
+    .young-shell:not(.sidebar-hidden) .sidebar-toggle,
+    .mova-shell.case-sidebar-shell:not(.sidebar-hidden) .mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-shell.case-sidebar-shell:not(.sidebar-hidden) .eventbrite-sidebar-toggle.sidebar-toggle,
+    .project-four-case .case-sidebar-shell:not(.sidebar-hidden) .project-four-sidebar-toggle.sidebar-toggle {
+        left: calc(min(82vw, 320px) - 18px);
+    }
+
+    .young-shell.sidebar-hidden .sidebar-toggle,
+    .mova-shell.case-sidebar-shell.sidebar-hidden .mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-shell.case-sidebar-shell.sidebar-hidden .eventbrite-sidebar-toggle.sidebar-toggle,
+    .project-four-case .case-sidebar-shell.sidebar-hidden .project-four-sidebar-toggle.sidebar-toggle {
+        left: 24px;
     }
 }

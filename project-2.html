@@ -35,13 +35,17 @@
     </div>
 </header>
     <main class="eventbrite-case project-case" id="eventbriteCase">
-        <div class="eventbrite-shell" id="eventbriteShell">
-            <button class="eventbrite-sidebar-toggle sidebar-toggle" id="sidebarToggle" type="button" aria-label="Open sidebar" aria-controls="sidebar" aria-expanded="false">
-                <span class="eventbrite-toggle-open" aria-hidden="true">☰</span>
-                <span class="eventbrite-toggle-close" aria-hidden="true">×</span>
+        <div class="eventbrite-shell case-sidebar-shell" id="eventbriteShell">
+            <button class="eventbrite-sidebar-toggle sidebar-toggle" id="eventbriteSidebarToggle" type="button" aria-label="Toggle sidebar" aria-controls="eventbriteSidebar" aria-expanded="true" title="Close sidebar">
+                <span class="sidebar-toggle-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22">
+                        <rect x="3" y="4" width="18" height="16" rx="3"></rect>
+                        <path d="M9 4v16"></path>
+                    </svg>
+                </span>
             </button>
 
-            <aside class="eventbrite-sidebar sidebar" id="sidebar" aria-label="Eventbrite case study navigation">
+            <aside class="eventbrite-sidebar case-sidebar" id="eventbriteSidebar" aria-label="Eventbrite case study navigation">
                 <div class="eventbrite-sidebar-brand">
                     <p class="eventbrite-section-label">Eventbrite Wallet</p>
                     <strong>Case Study</strong>
@@ -57,9 +61,7 @@
                 </nav>
             </aside>
 
-            <div class="eventbrite-sidebar-overlay" id="eventbriteSidebarOverlay" aria-hidden="true"></div>
-
-        <article class="eventbrite-case-study" id="mainContent">
+            <article class="eventbrite-case-study case-sidebar-main" id="mainContent">
             <header class="eventbrite-hero">
                 <div class="eventbrite-hero-copy">
                     <a href="/portfolio.html" class="back-link">Back to portfolio</a>
