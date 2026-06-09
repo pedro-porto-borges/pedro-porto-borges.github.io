@@ -2536,16 +2536,16 @@ button:focus-visible {
 
 .eventbrite-case .eventbrite-sidebar {
     position: fixed;
-    top: 0;
+    top: 80px;
     left: 0;
     z-index: 9998;
-    width: min(320px, 86vw);
-    height: 100vh;
+    width: 280px;
+    height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
-    padding: 6rem 1.5rem 1.5rem;
+    padding: 2rem;
     background: rgba(17, 17, 17, 0.96);
     border-right: 1px solid rgba(255, 255, 255, 0.16);
     box-shadow: 0 24px 60px rgba(0, 0, 0, 0.28);
@@ -2559,7 +2559,7 @@ button:focus-visible {
 
 .eventbrite-case .eventbrite-sidebar-brand {
     display: grid;
-    gap: 0.4rem;
+    gap: 0.35rem;
 }
 
 .eventbrite-case .eventbrite-sidebar-brand strong {
@@ -2569,14 +2569,17 @@ button:focus-visible {
 }
 
 .eventbrite-case .eventbrite-sidebar-nav {
-    display: grid;
-    gap: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 0.95rem;
 }
 
 .eventbrite-case .eventbrite-sidebar-nav a {
+    width: fit-content;
     color: rgba(255, 255, 255, 0.72);
     font-weight: 700;
-    transition: color 200ms ease, transform 200ms ease;
+    transition: color 180ms ease, transform 180ms ease;
 }
 
 .eventbrite-case .eventbrite-sidebar-nav a:hover,
@@ -2937,16 +2940,16 @@ button:focus-visible {
 
 .mova-case .mova-sidebar {
     position: fixed;
-    top: 0;
+    top: 80px;
     left: 0;
     z-index: 9998;
-    width: min(320px, 86vw);
-    height: 100vh;
+    width: 280px;
+    height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     gap: 2rem;
-    padding: 6rem 1.5rem 1.5rem;
+    padding: 2rem;
     background: rgba(58, 58, 58, 0.97);
     border-right: 1px solid rgba(255, 255, 255, 0.16);
     box-shadow: 0 24px 60px rgba(58, 58, 58, 0.28);
@@ -2960,7 +2963,7 @@ button:focus-visible {
 
 .mova-case .mova-sidebar-brand {
     display: grid;
-    gap: 0.4rem;
+    gap: 0.35rem;
 }
 
 .mova-case .mova-sidebar-brand strong {
@@ -2970,14 +2973,17 @@ button:focus-visible {
 }
 
 .mova-case .mova-sidebar-nav {
-    display: grid;
-    gap: 0.85rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+    font-size: 0.95rem;
 }
 
 .mova-case .mova-sidebar-nav a {
+    width: fit-content;
     color: rgba(255, 255, 255, 0.76);
     font-weight: 700;
-    transition: color 200ms ease, transform 200ms ease;
+    transition: color 180ms ease, transform 180ms ease;
 }
 
 .mova-case .mova-sidebar-nav a:hover,
@@ -3125,6 +3131,318 @@ button:focus-visible {
 }
 
 
+
+/* Shared project sidebar behavior */
+.project-case .case-sidebar-shell,
+.project-four-case .case-sidebar-shell {
+    --case-sidebar-width: 280px;
+    display: grid;
+    grid-template-columns: var(--case-sidebar-width) minmax(0, 1fr);
+    min-height: calc(100vh - 80px);
+    position: relative;
+    width: min(1280px, 100%);
+    margin: 0 auto;
+    transition: grid-template-columns 300ms ease;
+}
+
+.eventbrite-case .case-sidebar-shell {
+    width: min(1120px, 100%);
+}
+
+.mova-case .case-sidebar-shell.sidebar-open,
+.eventbrite-case .case-sidebar-shell.sidebar-open {
+    padding-left: 0;
+}
+
+.project-case .case-sidebar-shell.sidebar-hidden,
+.project-four-case .case-sidebar-shell.sidebar-hidden {
+    grid-template-columns: 0 minmax(0, 1fr);
+}
+
+.project-case .case-sidebar-shell>.sidebar,
+.project-case .case-sidebar-shell>.case-sidebar,
+.project-four-case .case-sidebar-shell>.case-sidebar {
+    grid-column: 1;
+    grid-row: 1;
+    position: sticky;
+    top: 80px;
+    left: auto;
+    z-index: auto;
+    width: 100%;
+    min-width: 0;
+    height: calc(100vh - 80px);
+    overflow: hidden;
+    opacity: 1;
+    transform: translateX(0);
+    pointer-events: auto;
+    transition: opacity 220ms ease, transform 300ms ease, padding 300ms ease, border-color 300ms ease;
+}
+
+.mova-case .case-sidebar-shell>.mova-sidebar.sidebar,
+.eventbrite-case .case-sidebar-shell>.eventbrite-sidebar.case-sidebar,
+.eventbrite-case .case-sidebar-shell>.eventbrite-sidebar.sidebar {
+    position: sticky;
+    top: 80px;
+    left: auto;
+    z-index: auto;
+    width: 100%;
+    min-width: 0;
+    height: calc(100vh - 80px);
+    transform: translateX(0);
+}
+
+.project-case .case-sidebar-shell.sidebar-hidden>.sidebar,
+.project-case .case-sidebar-shell.sidebar-hidden>.case-sidebar,
+.project-four-case .case-sidebar-shell.sidebar-hidden>.case-sidebar {
+    opacity: 0;
+    transform: translateX(-24px);
+    pointer-events: none;
+    padding-left: 0;
+    padding-right: 0;
+    border-right-color: transparent;
+    border-left-color: transparent;
+    box-shadow: none;
+}
+
+.project-case .case-sidebar-shell>.case-sidebar-main,
+.project-four-case .case-sidebar-shell>.case-sidebar-main {
+    grid-column: 2;
+    grid-row: 1;
+    min-width: 0;
+    width: min(1120px, 100%);
+    margin: 0 auto;
+}
+
+.project-case .case-sidebar-shell>.sidebar-toggle,
+.project-four-case .case-sidebar-shell>.sidebar-toggle {
+    position: fixed;
+    top: 96px;
+    left: calc(var(--case-sidebar-width) - 18px);
+    z-index: 9999;
+    margin: 0;
+    transition: left 300ms ease, background 200ms ease, color 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+}
+
+.mova-case .case-sidebar-shell.sidebar-open>.mova-sidebar-toggle.sidebar-toggle,
+.eventbrite-case .case-sidebar-shell.sidebar-open>.eventbrite-sidebar-toggle.sidebar-toggle,
+.project-four-case .case-sidebar-shell.sidebar-open>.project-four-sidebar-toggle.sidebar-toggle {
+    left: calc(var(--case-sidebar-width) - 18px);
+}
+
+.mova-case .case-sidebar-shell.sidebar-hidden>.mova-sidebar-toggle.sidebar-toggle,
+.eventbrite-case .case-sidebar-shell.sidebar-hidden>.eventbrite-sidebar-toggle.sidebar-toggle,
+.project-four-case .case-sidebar-shell.sidebar-hidden>.project-four-sidebar-toggle.sidebar-toggle,
+.project-case .case-sidebar-shell.sidebar-hidden>.sidebar-toggle,
+.project-four-case .case-sidebar-shell.sidebar-hidden>.sidebar-toggle {
+    left: 24px;
+}
+
+.project-case .case-sidebar-shell>.sidebar-toggle .sidebar-toggle-icon,
+.project-four-case .case-sidebar-shell>.sidebar-toggle .sidebar-toggle-icon {
+    width: auto;
+    height: auto;
+    display: grid;
+    place-items: center;
+    background: transparent;
+    border-radius: 0;
+    transition: none;
+}
+
+.project-case .case-sidebar-shell>.sidebar-toggle:hover .sidebar-toggle-icon,
+.project-four-case .case-sidebar-shell>.sidebar-toggle:hover .sidebar-toggle-icon {
+    background: transparent;
+}
+
+.project-four-case .case-sidebar-shell>.project-four-sidebar-toggle.sidebar-toggle {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    min-height: 38px;
+    display: grid;
+    place-items: center;
+    padding: 0;
+    border: 1px solid rgba(15, 23, 42, 0.12);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.88);
+    color: var(--color-charcoal);
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.12);
+}
+
+.project-four-case .case-sidebar-shell>.project-four-sidebar-toggle.sidebar-toggle svg {
+    width: 22px;
+    height: 22px;
+    fill: none;
+    stroke: currentColor;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+}
+
+@media (min-width: 981px) {
+
+    .mova-case .mova-shell:not(.case-sidebar-shell),
+    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell) {
+        --case-sidebar-width: 280px;
+        display: grid;
+        grid-template-columns: 0 minmax(0, 1fr);
+        position: relative;
+        margin: 0 auto;
+        padding-left: 0;
+        transition: grid-template-columns 300ms ease;
+    }
+
+    .mova-case .mova-shell:not(.case-sidebar-shell) {
+        width: min(1280px, 100%);
+    }
+
+    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell) {
+        width: min(1120px, 100%);
+    }
+
+    .mova-case .mova-shell:not(.case-sidebar-shell).sidebar-open,
+    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell).sidebar-open {
+        grid-template-columns: var(--case-sidebar-width) minmax(0, 1fr);
+        padding-left: 0;
+    }
+
+    .mova-case .mova-shell:not(.case-sidebar-shell) .mova-sidebar,
+    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell) .eventbrite-sidebar {
+        grid-column: 1;
+        grid-row: 1;
+        position: sticky;
+        top: 80px;
+        left: auto;
+        z-index: auto;
+        width: 100%;
+        min-width: 0;
+        height: calc(100vh - 80px);
+        overflow: hidden;
+        opacity: 0;
+        transform: translateX(-24px);
+        pointer-events: none;
+        padding-left: 0;
+        padding-right: 0;
+        border-right-color: transparent;
+        box-shadow: none;
+        transition: opacity 220ms ease, transform 300ms ease, padding 300ms ease, border-color 300ms ease;
+    }
+
+    .mova-case .mova-shell:not(.case-sidebar-shell).sidebar-open .mova-sidebar,
+    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell).sidebar-open .eventbrite-sidebar {
+        opacity: 1;
+        transform: translateX(0);
+        pointer-events: auto;
+        padding: 2rem;
+        border-right-color: rgba(255, 255, 255, 0.16);
+    }
+
+    .mova-case .mova-shell:not(.case-sidebar-shell) .mova-case-study,
+    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell) .eventbrite-case-study {
+        grid-column: 2;
+        grid-row: 1;
+        min-width: 0;
+        width: min(1120px, 100%);
+        margin: 0 auto;
+    }
+
+    .mova-case .mova-shell:not(.case-sidebar-shell) .mova-sidebar-overlay,
+    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell) .eventbrite-sidebar-overlay {
+        display: none;
+        pointer-events: none;
+    }
+
+    .mova-case .mova-shell:not(.case-sidebar-shell).sidebar-open .mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-case .eventbrite-shell:not(.case-sidebar-shell).sidebar-open .eventbrite-sidebar-toggle.sidebar-toggle {
+        left: calc(var(--case-sidebar-width) - 18px);
+    }
+}
+
+@media (max-width: 980px) {
+
+    .project-case .case-sidebar-shell,
+    .project-four-case .case-sidebar-shell {
+        --case-sidebar-width: min(82vw, 320px);
+        grid-template-columns: minmax(0, 1fr);
+        width: 100%;
+    }
+
+    .project-case .case-sidebar-shell>.sidebar,
+    .project-case .case-sidebar-shell>.case-sidebar,
+    .project-four-case .case-sidebar-shell>.case-sidebar {
+        position: fixed;
+        top: 80px;
+        left: 0;
+        z-index: 9998;
+        width: var(--case-sidebar-width);
+        height: calc(100vh - 80px);
+        opacity: 1;
+        transform: translateX(0);
+    }
+
+    .mova-case .mova-sidebar,
+    .eventbrite-case .eventbrite-sidebar {
+        width: min(82vw, 320px);
+    }
+
+    .project-case .case-sidebar-shell.sidebar-hidden>.sidebar,
+    .project-case .case-sidebar-shell.sidebar-hidden>.case-sidebar,
+    .project-four-case .case-sidebar-shell.sidebar-hidden>.case-sidebar {
+        opacity: 0;
+        transform: translateX(-100%);
+        pointer-events: none;
+    }
+
+    .project-case .case-sidebar-shell>.case-sidebar-main,
+    .project-four-case .case-sidebar-shell>.case-sidebar-main {
+        grid-column: 1;
+    }
+
+    .mova-case .case-sidebar-shell.sidebar-open>.mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-case .case-sidebar-shell.sidebar-open>.eventbrite-sidebar-toggle.sidebar-toggle,
+    .project-four-case .case-sidebar-shell.sidebar-open>.project-four-sidebar-toggle.sidebar-toggle,
+    .project-case .case-sidebar-shell>.sidebar-toggle,
+    .project-four-case .case-sidebar-shell>.sidebar-toggle {
+        left: calc(var(--case-sidebar-width) - 18px);
+    }
+
+    .mova-case .case-sidebar-shell.sidebar-hidden>.mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-case .case-sidebar-shell.sidebar-hidden>.eventbrite-sidebar-toggle.sidebar-toggle,
+    .project-four-case .case-sidebar-shell.sidebar-hidden>.project-four-sidebar-toggle.sidebar-toggle,
+    .project-case .case-sidebar-shell.sidebar-hidden>.sidebar-toggle,
+    .project-four-case .case-sidebar-shell.sidebar-hidden>.sidebar-toggle {
+        left: 24px;
+    }
+}
+
+@media (max-width: 620px) {
+
+    .mova-case .mova-sidebar,
+    .eventbrite-case .eventbrite-sidebar {
+        padding: 1.5rem;
+    }
+
+    .project-four-case .case-sidebar-shell>.project-four-sidebar-toggle.sidebar-toggle {
+        top: 92px;
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        min-height: 36px;
+        border-radius: 11px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+    .project-case .case-sidebar-shell,
+    .project-case .case-sidebar-shell>.sidebar,
+    .project-case .case-sidebar-shell>.case-sidebar,
+    .project-case .case-sidebar-shell>.sidebar-toggle,
+    .project-four-case .case-sidebar-shell,
+    .project-four-case .case-sidebar-shell>.case-sidebar,
+    .project-four-case .case-sidebar-shell>.sidebar-toggle {
+        transition: none;
+    }
+}
 
 /* About page */
 .about-page {

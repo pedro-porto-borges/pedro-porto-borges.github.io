@@ -6,8 +6,31 @@
 <body>
     <!--@import "_header.kit"-->
 
-    <main>
-        <article class="project-detail">
+    <main class="project-four-case">
+        <div class="project-four-shell case-sidebar-shell" id="youngShell">
+            <button class="project-four-sidebar-toggle sidebar-toggle" id="sidebarToggle" type="button"
+                aria-label="Toggle sidebar" aria-controls="youngSidebar" aria-expanded="true" title="Close sidebar">
+                <span class="sidebar-toggle-icon" aria-hidden="true">
+                    <svg viewBox="0 0 24 24" width="22" height="22">
+                        <rect x="3" y="4" width="18" height="16" rx="3"></rect>
+                        <path d="M9 4v16"></path>
+                    </svg>
+                </span>
+            </button>
+
+            <aside class="project-facts case-sidebar" id="youngSidebar" aria-label="Project details">
+                <h2>Details</h2>
+                <dl>
+                    <dt>Date</dt>
+                    <dd>2025</dd>
+                    <dt>Technologies</dt>
+                    <dd>HTML, CSS, Prototyping</dd>
+                    <dt>Role</dt>
+                    <dd>Concept and build</dd>
+                </dl>
+            </aside>
+
+            <article class="project-detail case-sidebar-main">
             <header class="project-detail-hero section-fade">
                 <div class="container narrow">
                     <a href="/portfolio.html" class="back-link">Back to portfolio</a>
@@ -42,20 +65,10 @@
                             <figcaption>Interface image slot: wireframe, prototype screen, or final outcome.</figcaption>
                         </figure>
                     </div>
-                    <aside class="project-facts">
-                        <h2>Details</h2>
-                        <dl>
-                            <dt>Date</dt>
-                            <dd>2025</dd>
-                            <dt>Technologies</dt>
-                            <dd>HTML, CSS, Prototyping</dd>
-                            <dt>Role</dt>
-                            <dd>Concept and build</dd>
-                        </dl>
-                    </aside>
                 </div>
             </section>
         </article>
+        </div>
     </main>
 
     <!--@import "_footer.kit"-->
