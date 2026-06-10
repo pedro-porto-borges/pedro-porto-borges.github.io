@@ -5631,3 +5631,44 @@ MOVA SIDEBAR VISUAL FIX
 .eventbrite-case .eventbrite-social a:focus-visible {
     color: var(--eb-accent);
 }
+
+@media (min-width: 981px) {
+    .mova-case {
+        --case-content-top-align: 2rem;
+    }
+
+    .eventbrite-case {
+        --case-content-top-align: 2rem;
+    }
+
+    .mova-case .mova-case-study.case-sidebar-main,
+    .eventbrite-case .eventbrite-case-study.case-sidebar-main {
+        padding-top: var(--case-content-top-align) !important;
+    }
+}
+
+@media (min-width: 981px) {
+    .young-case {
+        --young-content-top-align: var(--yc-space-xl);
+    }
+
+    .young-main {
+        padding-top: var(--young-content-top-align) !important;
+    }
+}
+
+/* =========================================================
+   YOUNG HERO TOP SPACING FIX
+========================================================= */
+
+.young-case .young-article {
+    gap: var(--yc-space-2xl) !important;
+}
+
+.young-case .young-back-link + .young-post-header {
+    margin-top: calc(var(--yc-space-sm) * -1) !important;
+}
+
+.young-case .young-post-header {
+    padding-top: 0 !important;
+}
