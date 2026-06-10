@@ -42,6 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
         if (!prev || !next || slides.length === 0 || indicators.length === 0) return;
 
         let activeIndex = 0;
+        let touchStartX = 0;
+        let touchEndX = 0;
 
         const showSlide = (index) => {
             activeIndex = (index + slides.length) % slides.length;
@@ -55,8 +57,33 @@ document.addEventListener('DOMContentLoaded', () => {
             });
         };
 
+        // Click navigation
         prev.addEventListener('click', () => showSlide(activeIndex - 1));
         next.addEventListener('click', () => showSlide(activeIndex + 1));
+
+        // Touch swipe navigation
+        carousel.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, false);
+
+        carousel.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            handleSwipe();
+        }, false);
+
+        const handleSwipe = () => {
+            const swipeThreshold = 50;
+            const diff = touchStartX - touchEndX;
+
+            // Swipe left (diff > 0) - next slide
+            if (diff > swipeThreshold) {
+                showSlide(activeIndex + 1);
+            }
+            // Swipe right (diff < 0) - previous slide
+            else if (diff < -swipeThreshold) {
+                showSlide(activeIndex - 1);
+            }
+        };
     };
 
     // ============================================

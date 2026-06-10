@@ -3840,7 +3840,6 @@ button:focus-visible {
 }
 
 @keyframes aboutBounce {
-
     0%,
     100% {
         transform: translateY(0);
@@ -3852,18 +3851,17 @@ button:focus-visible {
 }
 
 @media (max-width: 1024px) {
-
     .about-hero,
     .experience-education {
         grid-template-columns: 1fr;
     }
 
     .hero-carousel {
-        order: 2;
+        order: 1;
     }
 
     .hero-side {
-        order: 1;
+        order: 2;
     }
 
     .carousel {

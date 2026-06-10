@@ -2202,11 +2202,11 @@ button:focus-visible,
     }
 
     .hero-carousel {
-        order: 2;
+        order: 1;
     }
 
     .hero-side {
-        order: 1;
+        order: 2;
     }
 
     .carousel {
