@@ -4494,15 +4494,13 @@ button:focus-visible {
 
 .react-portfolio-grid {
     gap: 24px;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
 }
 
-.react-study-image {
-    height: 320px;
-}
-
-.react-study-content {
-    padding: 24px 28px 28px;
+@media (min-width: 768px) {
+    .react-portfolio-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
 }
 
 .react-study-meta {

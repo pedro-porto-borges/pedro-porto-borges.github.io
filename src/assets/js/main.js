@@ -87,110 +87,26 @@ document.addEventListener('DOMContentLoaded', () => {
     };
 
     // ============================================
-    // Project sidebars (Mova - Itaú project)
+    // Project sidebars
     // ============================================
-    const initMovaSidebar = () => {
-        const shell = document.getElementById('movaShell');
-        const toggle = document.getElementById('movaSidebarToggle');
-        const sidebar = document.getElementById('movaSidebar');
-        const overlay = document.getElementById('movaSidebarOverlay');
+    const initSidebarToggles = () => {
+        document.querySelectorAll('.sidebar-toggle').forEach((toggle) => {
+            const shell = toggle.closest('.young-shell, .mova-shell, .eventbrite-shell, .case-sidebar-shell');
+            if (!shell) return;
 
-        if (!shell || !toggle || !sidebar || !overlay) return;
+            const setSidebarOpen = (isOpen) => {
+                shell.classList.toggle('sidebar-hidden', !isOpen);
+                toggle.setAttribute('aria-expanded', String(isOpen));
+                toggle.setAttribute('title', isOpen ? 'Close sidebar' : 'Open sidebar');
+            };
 
-        const setSidebarOpen = (isOpen) => {
-            shell.classList.toggle('sidebar-open', isOpen);
-            toggle.setAttribute('aria-expanded', String(isOpen));
-            toggle.setAttribute('aria-label', isOpen ? 'Close sidebar' : 'Open sidebar');
-        };
+            const isOpenOnInit = !shell.classList.contains('sidebar-hidden');
+            setSidebarOpen(isOpenOnInit);
 
-        toggle.addEventListener('click', (event) => {
-            event.stopPropagation();
-            setSidebarOpen(!shell.classList.contains('sidebar-open'));
-        });
-
-        overlay.addEventListener('click', () => {
-            setSidebarOpen(false);
-        });
-
-        sidebar.addEventListener('click', (event) => {
-            if (event.target.closest('a')) {
-                setSidebarOpen(false);
-            }
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                setSidebarOpen(false);
-            }
-        });
-    };
-
-    // ============================================
-    // Project sidebars (Eventbrite project)
-    // ============================================
-    const initEventbriteSidebar = () => {
-        const shell = document.getElementById('eventbriteShell');
-        const toggle = document.getElementById('sidebarToggle');
-        const sidebar = document.getElementById('sidebar');
-        const overlay = document.getElementById('eventbriteSidebarOverlay');
-
-        if (!shell || !toggle || !sidebar || !overlay) return;
-
-        const setSidebarOpen = (isOpen) => {
-            shell.classList.toggle('sidebar-open', isOpen);
-            toggle.setAttribute('aria-expanded', String(isOpen));
-            toggle.setAttribute('aria-label', isOpen ? 'Close sidebar' : 'Open sidebar');
-        };
-
-        toggle.addEventListener('click', (event) => {
-            event.stopPropagation();
-            setSidebarOpen(!shell.classList.contains('sidebar-open'));
-        });
-
-        overlay.addEventListener('click', () => {
-            setSidebarOpen(false);
-        });
-
-        sidebar.addEventListener('click', (event) => {
-            if (event.target.closest('a')) {
-                setSidebarOpen(false);
-            }
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                setSidebarOpen(false);
-            }
-        });
-    };
-
-    // ============================================
-    // Project sidebars (Wise Young Explorer project)
-    // ============================================
-    const initYoungSidebar = () => {
-        const sidebarToggle = document.getElementById('sidebarToggle');
-        const youngShell = document.getElementById('youngShell');
-
-        if (!sidebarToggle || !youngShell) return;
-
-        const setSidebarState = (isHidden) => {
-            youngShell.classList.toggle('sidebar-hidden', isHidden);
-
-            sidebarToggle.setAttribute('aria-expanded', String(!isHidden));
-            sidebarToggle.setAttribute(
-                'title',
-                isHidden ? 'Open sidebar' : 'Close sidebar'
-            );
-
-            localStorage.setItem('sidebarHidden', String(isHidden));
-        };
-
-        const savedState = localStorage.getItem('sidebarHidden') === 'true';
-        setSidebarState(savedState);
-
-        sidebarToggle.addEventListener('click', () => {
-            const isHidden = youngShell.classList.contains('sidebar-hidden');
-            setSidebarState(!isHidden);
+            toggle.addEventListener('click', () => {
+                const currentOpen = !shell.classList.contains('sidebar-hidden');
+                setSidebarOpen(!currentOpen);
+            });
         });
     };
 
@@ -199,8 +115,6 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     initMobileMenu();
     initAboutCarousel();
-    initMovaSidebar();
-    initEventbriteSidebar();
-    initYoungSidebar();
+    initSidebarToggles();
 });
 
