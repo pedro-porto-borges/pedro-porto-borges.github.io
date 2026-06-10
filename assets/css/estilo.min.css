@@ -5692,3 +5692,7 @@ MOVA SIDEBAR VISUAL FIX
 .young-case .young-main {
     padding-bottom: clamp(3rem, 6vw, 6rem) !important;
 }
+
+.young-case .young-role-grid h3 {
+    color: var(--yc-accent) !important;
+}
