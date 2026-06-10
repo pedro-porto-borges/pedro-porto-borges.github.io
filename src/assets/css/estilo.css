@@ -1749,9 +1749,16 @@ button:focus-visible,
     .split-section,
     .project-grid,
     .detail-grid,
-    .contact-grid,
-    .footer-content {
+    .contact-grid {
         grid-template-columns: 1fr;
+    }
+
+    .footer-content {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .footer-section:first-child {
+        grid-column: 1 / -1;
     }
 
     .hero-card {

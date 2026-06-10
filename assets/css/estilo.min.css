@@ -1963,12 +1963,21 @@ button:focus-visible {
 
     .contact-grid,
     .detail-grid,
-    .footer-content,
     .hero-grid,
     .project-grid,
     .split-section {
         -ms-grid-columns: 1fr;
         grid-template-columns: 1fr
+    }
+
+    .footer-content {
+        -ms-grid-columns: 1fr 1fr;
+        grid-template-columns: 1fr 1fr
+    }
+
+    .footer-section:first-child {
+        -ms-grid-column-span: 2;
+        grid-column: 1 / -1
     }
 
     .hero-card {
