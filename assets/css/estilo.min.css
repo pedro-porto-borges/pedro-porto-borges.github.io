@@ -5670,3 +5670,25 @@ MOVA SIDEBAR VISUAL FIX
 .young-case .young-post-header {
     padding-top: 0 !important;
 }
+
+/* =========================================================
+   PROJECT FOOTER SPACING FIX
+========================================================= */
+
+.mova-case,
+.eventbrite-case,
+.young-case {
+    margin-bottom: 0 !important;
+}
+
+.mova-case + .footer,
+.eventbrite-case + .footer,
+.young-case + .footer {
+    margin-top: 0 !important;
+}
+
+.mova-case .mova-case-study.case-sidebar-main,
+.eventbrite-case .eventbrite-case-study.case-sidebar-main,
+.young-case .young-main {
+    padding-bottom: clamp(3rem, 6vw, 6rem) !important;
+}
