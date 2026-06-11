@@ -3815,3 +3815,40 @@ MOVA SIDEBAR VISUAL FIX
 .young-case .young-role-grid h3 {
     color: var(--yc-accent) !important;
 }
+
+@media (max-width: 620px) {
+    .young-sidebar,
+    .mova-case .mova-sidebar.case-sidebar,
+    .eventbrite-case .eventbrite-sidebar.case-sidebar,
+    .project-four-case .case-sidebar {
+        top: 80px;
+        height: calc(100vh - 80px);
+        transition:
+            top 320ms ease,
+            height 320ms ease,
+            transform 420ms cubic-bezier(0.16, 1, 0.3, 1),
+            opacity 280ms ease;
+    }
+
+    body.is-scrolled .young-sidebar,
+    body.is-scrolled .mova-case .mova-sidebar.case-sidebar,
+    body.is-scrolled .eventbrite-case .eventbrite-sidebar.case-sidebar,
+    body.is-scrolled .project-four-case .case-sidebar {
+        top: 0;
+        height: 100vh;
+    }
+
+    .young-case .sidebar-toggle,
+    .mova-case .mova-sidebar-toggle.sidebar-toggle,
+    .eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle,
+    .project-four-case .project-four-sidebar-toggle.sidebar-toggle {
+        top: 92px;
+    }
+
+    body.is-scrolled .young-case .sidebar-toggle,
+    body.is-scrolled .mova-case .mova-sidebar-toggle.sidebar-toggle,
+    body.is-scrolled .eventbrite-case .eventbrite-sidebar-toggle.sidebar-toggle,
+    body.is-scrolled .project-four-case .project-four-sidebar-toggle.sidebar-toggle {
+        top: 16px;
+    }
+}
