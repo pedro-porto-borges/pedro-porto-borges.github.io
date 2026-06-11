@@ -3957,3 +3957,53 @@ CONTACT MOBILE SPACING FIX
         display: none !important;
     }
 }
+
+.react-study-card-disabled {
+    cursor: not-allowed;
+    opacity: 0.62;
+    pointer-events: none;
+}
+
+.react-study-card-disabled .react-study-link:after {
+    display: none;
+}
+
+.react-study-card-disabled .react-study-link {
+    opacity: 0.72;
+}
+
+.is-disabled {
+    cursor: not-allowed;
+    opacity: 0.62;
+    pointer-events: none;
+}
+
+/* =========================================================
+   DISABLED PROJECT CARD / LINK STATE
+========================================================= */
+
+.project-card-disabled,
+.project-card.is-disabled,
+.react-study-card-disabled,
+a.is-disabled,
+button.is-disabled,
+.btn.is-disabled,
+.text-link.is-disabled {
+    pointer-events: none;
+    cursor: not-allowed;
+    opacity: 0.55;
+    filter: grayscale(1);
+    transform: none;
+    box-shadow: none;
+}
+
+.project-card-disabled:hover,
+.project-card.is-disabled:hover,
+.react-study-card-disabled:hover,
+a.is-disabled:hover,
+button.is-disabled:hover,
+.btn.is-disabled:hover,
+.text-link.is-disabled:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}
