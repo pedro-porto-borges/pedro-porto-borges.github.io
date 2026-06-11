@@ -3896,3 +3896,64 @@ MOVA SIDEBAR VISUAL FIX
         box-sizing: border-box;
     }
 }
+
+@media (max-width: 620px) {
+    .about-page .about-main {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .about-page .about-hero,
+    .about-page .hero-side,
+    .about-page .experience-education {
+        display: contents;
+    }
+
+    .about-page .hero-carousel {
+        order: 1;
+    }
+
+    .about-page .bio-card {
+        order: 2;
+    }
+
+    .about-page .experiences-card {
+        order: 3;
+    }
+
+    .about-page .education-card {
+        order: 4;
+    }
+
+    .about-page .scroll-indicator {
+        order: 5;
+    }
+
+    .about-page .social-links {
+        order: 99;
+    }
+}
+
+/* =========================================================
+CONTACT MOBILE SPACING FIX
+========================================================= */
+
+@media (max-width: 620px) {
+    .about-page .about-main {
+        --contact-mobile-section-gap: clamp(2rem, 8vw, 3.5rem);
+    }
+
+    .about-page .hero-carousel,
+    .about-page .bio-card,
+    .about-page .experiences-card {
+        margin-bottom: var(--contact-mobile-section-gap);
+    }
+
+    .about-page .social-links {
+        margin-top: var(--contact-mobile-section-gap) !important;
+    }
+
+    .about-page .scroll-indicator {
+        display: none !important;
+    }
+}
