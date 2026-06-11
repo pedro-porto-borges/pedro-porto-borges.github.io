@@ -9,7 +9,7 @@
     <main class="mova-case project-case" id="movaCase">
         <div class="mova-shell case-sidebar-shell sidebar-hidden" id="movaShell">
             <button class="mova-sidebar-toggle sidebar-toggle" id="movaSidebarToggle" type="button"
-                aria-label="Open sidebar" aria-controls="movaSidebar" aria-expanded="false" title="Open sidebar">
+                aria-label="Toggle case study navigation" aria-controls="movaSidebar" aria-expanded="false" title="Open sidebar">
                 <span class="sidebar-toggle-icon" aria-hidden="true">
                     <svg viewBox="0 0 24 24" width="22" height="22">
                         <rect x="3" y="4" width="18" height="16" rx="3"></rect>
@@ -21,10 +21,10 @@
             <aside class="mova-sidebar case-sidebar" id="movaSidebar" aria-label="Itaú + MOVA case study navigation">
                 <div class="mova-sidebar-brand">
                     <p class="mova-eyebrow">Portfolio</p>
-                    <a class="mova-brand-name" href="#top">Pedro Porto Borges</a>
+                    <a class="mova-brand-name" href="#overview">Pedro Porto Borges</a>
                     <p class="mova-location">Lisbon, PT</p>
                 </div>
-                <nav class="mova-sidebar-nav">
+                <nav class="mova-sidebar-nav" aria-label="Case study sections">
                     <a href="#overview">Overview</a>
                     <a href="#challenge">Challenge</a>
                     <a href="#role">Role</a>
@@ -33,7 +33,7 @@
                     <a href="#results">Results</a>
                 </nav>
 
-                <nav class="mova-social" aria-label="External links">
+                <nav class="mova-social" aria-label="Project external links">
                     <a href="/portfolio.html">Portfolio</a>
                     <a href="https://www.linkedin.com/in/pedro-porto-borges-789371208/" target="_blank"
                         rel="noopener">LinkedIn</a>
@@ -43,7 +43,7 @@
             </aside>
 
             <article class="mova-case-study case-sidebar-main" id="mainContent">
-                <section class="mova-hero" id="overview" aria-label="Project snapshot">
+                <header class="mova-hero" id="overview" aria-label="Project snapshot">
                     <div class="mova-hero-copy">
                         <a href="/portfolio.html" class="back-link">Back to portfolio</a>
                         <p class="mova-section-label">Itaú + MOVA</p>
@@ -86,7 +86,7 @@
                             <strong>Professional</strong>
                         </div>
                     </div>
-                </section>
+                </header>
 
                 <section class="mova-story-section" id="context">
                     <div class="mova-section-heading">
