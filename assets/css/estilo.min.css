@@ -3852,3 +3852,47 @@ MOVA SIDEBAR VISUAL FIX
         top: 16px;
     }
 }
+
+/* =========================================================
+   MOBILE/TABLET MAIN CONTENT CENTERING FIX
+========================================================= */
+
+@media (max-width: 980px) {
+    .young-shell,
+    .mova-case .mova-shell.case-sidebar-shell,
+    .eventbrite-case .eventbrite-shell.case-sidebar-shell,
+    .project-four-case .case-sidebar-shell {
+        grid-template-columns: minmax(0, 1fr) !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
+        column-gap: 0 !important;
+        padding-right: 0 !important;
+        padding-left: 0 !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        box-sizing: border-box !important;
+        overflow-x: hidden;
+    }
+
+    .young-case .young-main,
+    .mova-case .mova-case-study.case-sidebar-main,
+    .eventbrite-case .eventbrite-case-study.case-sidebar-main,
+    .project-four-case .case-sidebar-main {
+        width: min(100%, 1120px) !important;
+        max-width: 100% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        padding-left: clamp(1.25rem, 5vw, 2rem) !important;
+        padding-right: clamp(1.25rem, 5vw, 2rem) !important;
+        box-sizing: border-box !important;
+    }
+
+    .young-case .young-main *,
+    .mova-case .mova-case-study.case-sidebar-main *,
+    .eventbrite-case .eventbrite-case-study.case-sidebar-main *,
+    .project-four-case .case-sidebar-main * {
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+}
