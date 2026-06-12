@@ -7,6 +7,10 @@
  */
 
 document.addEventListener('DOMContentLoaded', () => {
+    const SIDEBAR_SHELL_SELECTOR = '.young-shell, .mova-shell, .eventbrite-shell, .case-sidebar-shell';
+    const SIDEBAR_HIDDEN_CLASS = 'sidebar-hidden';
+    const SCROLLED_CLASS = 'is-scrolled';
+
     // ============================================
     // Mobile hamburger menu toggle
     // ============================================
@@ -19,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         mobileMenuButton.addEventListener('click', () => {
             const isOpen = mobileMenu.classList.toggle('is-open');
 
-            mobileMenuButton.setAttribute('aria-expanded', isOpen);
+            mobileMenuButton.setAttribute('aria-expanded', String(isOpen));
             mobileMenuButton.setAttribute(
                 'aria-label',
                 isOpen ? 'Close menu' : 'Open menu'
@@ -89,32 +93,38 @@ document.addEventListener('DOMContentLoaded', () => {
     // ============================================
     // Project sidebars
     // ============================================
-    const initSidebarToggles = () => {
-        document.querySelectorAll('.sidebar-toggle').forEach((toggle) => {
-            const shell = toggle.closest('.young-shell, .mova-shell, .eventbrite-shell, .case-sidebar-shell');
-            if (!shell) return;
+    const initSidebarToggles = (buttons) => {
+        buttons.forEach((button) => {
+            button.addEventListener("click", () => {
+                const shell = button.closest(SIDEBAR_SHELL_SELECTOR);
+                if (!shell) return;
 
-            const setSidebarOpen = (isOpen) => {
-                shell.classList.toggle('sidebar-hidden', !isOpen);
-                toggle.setAttribute('aria-expanded', String(isOpen));
-                toggle.setAttribute('title', isOpen ? 'Close sidebar' : 'Open sidebar');
-            };
+                shell.classList.toggle(SIDEBAR_HIDDEN_CLASS);
 
-            const isOpenOnInit = !shell.classList.contains('sidebar-hidden');
-            setSidebarOpen(isOpenOnInit);
-
-            toggle.addEventListener('click', () => {
-                const currentOpen = !shell.classList.contains('sidebar-hidden');
-                setSidebarOpen(!currentOpen);
+                const isHidden = shell.classList.contains(SIDEBAR_HIDDEN_CLASS);
+                button.setAttribute("aria-expanded", String(!isHidden));
+                button.setAttribute("title", isHidden ? "Open sidebar" : "Close sidebar");
             });
         });
     };
 
+    const initMobileSidebarScrollState = () => {
+        const updateScrollState = () => {
+            document.body.classList.toggle(SCROLLED_CLASS, window.scrollY > 8);
+        };
+
+        updateScrollState();
+        window.addEventListener("scroll", updateScrollState, { passive: true });
+    };
+
+
     // ============================================
     // Initialize all features
     // ============================================
+    const sidebarButtons = document.querySelectorAll(".sidebar-toggle");
+
     initMobileMenu();
     initAboutCarousel();
-    initSidebarToggles();
+    initSidebarToggles(sidebarButtons);
+    initMobileSidebarScrollState();
 });
-
