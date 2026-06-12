@@ -330,7 +330,7 @@ button:focus-visible,
     --yc-border: rgba(245, 247, 239, 0.14);
     --yc-accent: #9ded73;
     --yc-accent-dark: #173f0b;
---yc-radius-lg: 1.5rem;
+    --yc-radius-lg: 1.5rem;
     --yc-radius-xl: 2rem;
     --yc-space-sm: 0.75rem;
     --yc-space-md: 1rem;
@@ -374,6 +374,7 @@ button:focus-visible,
 .young-shell.sidebar-hidden .young-main {
     width: 100%;
 }
+
 /* Hover trigger zone on left side when sidebar is hidden */
 .young-shell.sidebar-hidden::before {
     content: "";
@@ -724,6 +725,7 @@ button:focus-visible,
         padding: var(--yc-space-lg);
     }
 }
+
 /* Footer */
 .footer {
     background: var(--color-primary);
@@ -783,6 +785,7 @@ button:focus-visible,
         transform: translateY(0);
     }
 }
+
 /* Responsive adjustments */
 @media (max-width: 860px) {
     .navbar .container,
@@ -911,6 +914,7 @@ h1 {
         font-size: 0.8rem;
     }
 }
+
 /* About page */
 .about-page {
     background: #ffffff;
