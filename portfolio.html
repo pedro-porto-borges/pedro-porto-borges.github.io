@@ -9,9 +9,8 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/assets/css/estilo.min.css">
+    <link rel="stylesheet" href="assets/css/estilo.min.css">
 </head>
-    
 
 
 <body class="react-portfolio-page">
@@ -19,11 +18,11 @@
 <header class="react-portfolio-header">
     <div class="react-container">
         <nav class="react-portfolio-nav" aria-label="Primary navigation">
-            <a class="react-site-title" href="/index.html">Pedro Porto Borges</a>
+            <a class="react-site-title" href="index.html">Pedro Porto Borges</a>
 
             <div class="react-portfolio-menu" id="react-mobile-menu">
-                <a href="/portfolio.html">Case Studies</a>
-                <a href="/contact.html">About me</a>
+                <a href="portfolio.html">Case Studies</a>
+                <a href="contact.html">About me</a>
             </div>
 
             <button class="react-mobile-menu-button" type="button" aria-label="Open menu" aria-expanded="false"
@@ -35,6 +34,7 @@
         </nav>
     </div>
 </header>
+
         <main class="react-portfolio-main">
             <section class="react-portfolio-hero" aria-labelledby="portfolio-title">
                 <div class="react-container">
@@ -42,8 +42,8 @@
                         <h1 id="portfolio-title">Portfolio</h1>
                         <div class="react-portfolio-hero-copy">
                             <p><strong>Selected projects, experiments, and case studies.</strong></p>
-                            <p>A curated overview of four projects. Each card links to a detail page with space for your
-                                process, technologies, screenshots, and dates.</p>
+                            <p>A curated overview of selected projects, with each available case study linking to a
+                                detailed page about the process, decisions, outcomes, and role.</p>
                         </div>
                     </header>
                 </div>
@@ -52,11 +52,12 @@
             <section id="case-studies" class="react-portfolio-cases" aria-label="Case studies">
                 <div class="react-container">
                     <div class="react-portfolio-grid">
-                        <a class="react-study-card" href="/project-1.html">
+                        <a class="react-study-card" href="project-1.html" aria-label="Read the Itaú assisted sales channel case study">
                             <span class="react-study-image">
-                                <img src="assets\images\projects\itau-mova\mova-hero@2x.jpg" width="1200" height="800"
-                                    alt="Ita&uacute; assisted sales channel project preview" loading="eager"
-                                    decoding="async">
+                                <img src="assets/images/projects/itau-mova/mova-hero@1x.jpg"
+                                    srcset="assets/images/projects/itau-mova/mova-hero@1x.jpg 1x, assets/images/projects/itau-mova/mova-hero@2x.jpg 2x"
+                                    width="969" height="606" alt="Ita&uacute; assisted sales channel project preview"
+                                    loading="eager" decoding="async">
                             </span>
                             <span class="react-study-content">
                                 <span class="react-study-meta">Professional / 2024</span>
@@ -68,10 +69,10 @@
                             </span>
                         </a>
 
-                        <a class="react-study-card" href="/project-2.html">
+                        <a class="react-study-card" href="project-2.html" aria-label="Read the Eventbrite Wallet case study">
                             <span class="react-study-image">
-                                <img src="assets\images\projects\eventbrite\eventbrite-cover @1x.png" width="1200"
-                                    height="800" alt="Eventbrite Wallet project preview" loading="lazy"
+                                <img src="assets/images/projects/eventbrite/eventbrite-cover%20@1x.png" width="2880"
+                                    height="1620" alt="Eventbrite Wallet project preview" loading="lazy"
                                     decoding="async">
                             </span>
                             <span class="react-study-content">
@@ -84,9 +85,9 @@
                             </span>
                         </a>
 
-                        <a class="react-study-card" href="/project-3.html">
+                        <a class="react-study-card" href="project-3.html" aria-label="Read the Wise Young Explorer case study">
                             <span class="react-study-image">
-                                <img src="assets\images\projects\wise\1.jpg" width="1200" height="800"
+                                <img src="assets/images/projects/wise/1.jpg" width="1920" height="1080"
                                     alt="Wise Young Explorer project preview" loading="lazy" decoding="async">
                             </span>
                             <span class="react-study-content">
@@ -99,10 +100,12 @@
                             </span>
                         </a>
 
-                        <div class="react-study-card react-study-card-disabled is-disabled" aria-disabled="true" tabindex="-1">
+                        <article class="react-study-card react-study-card-disabled is-disabled" aria-disabled="true" aria-label="FBAUL website redesign case study unavailable">
                             <span class="react-study-image">
-                                <img src="assets\images\projects\Fbaul\cover @2x.png" width="1200" height="800"
-                                    alt="Redesign Website FBAUL project preview" loading="lazy" decoding="async">
+                                <img src="assets/images/projects/Fbaul/cover%20@1x.png"
+                                    srcset="assets/images/projects/Fbaul/cover%20@1x.png 1x, assets/images/projects/Fbaul/cover%20@2x.png 2x"
+                                    width="1920" height="1080" alt="Redesign Website FBAUL project preview"
+                                    loading="lazy" decoding="async">
 
                             </span>
                             <span class="react-study-content">
@@ -110,9 +113,9 @@
                                 <span class="react-study-title">Redesign - Website FBAUL</span>
                                 <span class="react-study-description">Simplifying a sensitive financial journey inside
                                     retail stores, balancing operational speed, customer clarity and compliance.</span>
-                                <span class="react-study-link">Coming soon</span>
+                                <span class="react-study-link">Case study unavailable</span>
                             </span>
-                        </div>
+                        </article>
                     </div>
                 </div>
             </section>
@@ -128,9 +131,9 @@
             <section class="footer-section">
                 <h3>Pages</h3>
                 <ul class="footer-links">
-                    <li><a href="/index.html">Home</a></li>
-                    <li><a href="/portfolio.html">Portfolio</a></li>
-                    <li><a href="/contact.html">Contact</a></li>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
                 </ul>
             </section>
             <section class="footer-section">
@@ -149,7 +152,7 @@
     </div>
 </footer>
 
-<script src="/assets/js/main.min.js"></script>
+<script src="assets/js/main.min.js"></script>
 
     </div>
 </body>

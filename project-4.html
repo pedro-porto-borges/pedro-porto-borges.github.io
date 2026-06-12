@@ -4,15 +4,87 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="refresh" content="0; url=portfolio.html">
-    <title>Project unavailable - Portfolio</title>
+    <meta name="description" content="Portfolio website for Pedro Porto Borges, featuring selected projects, process notes, and contact links.">
+    <title>Pedro Porto Borges - Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/css/estilo.min.css">
 </head>
 
+
 <body>
-    <main>
-        <p>This case study is currently unavailable.</p>
-        <a href="portfolio.html">Back to portfolio</a>
+<header class="react-portfolio-header">
+    <div class="react-container">
+        <nav class="react-portfolio-nav" aria-label="Primary navigation">
+            <a class="react-site-title" href="index.html">Pedro Porto Borges</a>
+
+            <div class="react-portfolio-menu" id="react-mobile-menu">
+                <a href="portfolio.html">Case Studies</a>
+                <a href="contact.html">About me</a>
+            </div>
+
+            <button class="react-mobile-menu-button" type="button" aria-label="Open menu" aria-expanded="false"
+                aria-controls="react-mobile-menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </div>
+</header>
+
+    <main class="project-case">
+        <section class="react-portfolio-hero" aria-labelledby="project-four-title">
+            <div class="react-container">
+                <article class="react-portfolio-hero-panel">
+                    <header>
+                        <a href="portfolio.html" class="back-link">Back to portfolio</a>
+                        <p class="react-study-meta">Academic / 2025</p>
+                        <h1 id="project-four-title">Redesign - Website FBAUL</h1>
+                    </header>
+
+                    <p>This case study is intentionally unavailable in the current portfolio version. The project is
+                        represented in the portfolio overview as a disabled item so visitors can understand that it is
+                        not currently open for reading.</p>
+                </article>
+            </div>
+        </section>
     </main>
+
+<footer class="footer">
+    <div class="container">
+        <div class="footer-content">
+            <section class="footer-section">
+                <p class="footer-kicker">Available for thoughtful digital work</p>
+                <h2>Let's build something clear, useful, and well made.</h2>
+            </section>
+            <section class="footer-section">
+                <h3>Pages</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="portfolio.html">Portfolio</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </section>
+            <section class="footer-section">
+                <h3>Social</h3>
+                <ul class="footer-links">
+                    <li><a href="https://github.com/pedro-porto-borges/" target="_blank" rel="noopener">GitHub</a></li>
+                    <li><a href="https://www.linkedin.com/in/pedro-porto-borges-789371208/" target="_blank"
+                            rel="noopener">LinkedIn</a></li>
+                    <li><a href="https://instagram.com/analog.pp/" target="_blank" rel="noopener">Instagram</a></li>
+                </ul>
+            </section>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Pedro Porto Borges.</p>
+        </div>
+    </div>
+</footer>
+
+<script src="assets/js/main.min.js"></script>
+
 </body>
 
 </html>
