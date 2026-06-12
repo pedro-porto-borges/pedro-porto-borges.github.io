@@ -3655,8 +3655,10 @@ MOVA SIDEBAR VISUAL OVERRIDES
 @media (min-width: 981px) {.young-case {
         --young-content-top-align: var(--yc-space-xl);
     }
-.young-main {
+.young-shell.sidebar-hidden > .young-main {
         padding-top: var(--young-content-top-align) !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
     }
 }
 /* =========================================================
